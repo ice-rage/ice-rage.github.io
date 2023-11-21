@@ -1,0 +1,6 @@
+debug.log
+node_modules
+
+# Visual Studio Code
+.vscode
+.settings
