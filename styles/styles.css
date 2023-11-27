@@ -28,7 +28,7 @@ body {
           flex-direction: column;
   min-height: 100vh;
   background-color: #DEDEDEFA;
-  background-image: url("../assets/images/noise.png"), url("../assets/images/bg.png");
+  background-image: url("../assets/images/bg.png"), url("../assets/images/noise.png");
   background-position: 0 0, 0, 0;
   background-size: auto, 100% auto;
   background-repeat: repeat, repeat-y;
@@ -491,9 +491,6 @@ button {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-}
-.home {
-  padding: 100px 0;
 }
 .home__listing {
   margin-bottom: 95px;
