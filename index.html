@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="show-event-popup">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -47,7 +47,6 @@
         <h2 class="listing__title section-title">Блог</h2>
 
         <div class="listing__article-list">
-          <!--prettier-ignore-->
           <article class="article-card listing__arctile-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__picture">
@@ -68,7 +67,7 @@
                 </div>
               </a>
 
-              <p class="articale-card__description">Организовывая фотосессию для локального бренда одежды, мы смогли воплотить все пожелания заказчика, и у нас получилась отличная работа. Смотрите, как это было</p>
+              <p class="article-card__description">Организовывая фотосессию для локального бренда одежды, мы смогли воплотить все пожелания заказчика, и у нас получилась отличная работа. Смотрите, как это было</p>
             </div>
           </article>
           <article class="article-card listing__arctile-card">
@@ -91,7 +90,7 @@
                 </div>
               </a>
 
-              <p class="articale-card__description">Клуб виртуальной реальноти - это другие миры, яркие эмоции, новый опыт... Мы предоставляем нашим клиентам лучший игровой VR-опыт в Томске.</p>
+              <p class="article-card__description">Клуб виртуальной реальноти - это другие миры, яркие эмоции, новый опыт... Мы предоставляем нашим клиентам лучший игровой VR-опыт в Томске.</p>
             </div>
           </article>
           <article class="article-card listing__arctile-card">
@@ -114,12 +113,12 @@
                 </div>
               </a>
 
-              <p class="articale-card__description">15 электрогенераторов, километры проводов и пара тонн света. Все это для того, чтобы организовать лучшую вечеринку года для ребят из Новосибирска.</p>
+              <p class="article-card__description">15 электрогенераторов, километры проводов и пара тонн света. Все это для того, чтобы организовать лучшую вечеринку года для ребят из Новосибирска.</p>
             </div>
           </article>
         </div>
 
-        <a href="#" class="listing__link link">Смотреть все</a>
+        <a href="#" class="listing__link">Смотреть все</a>
       </section>
 
       <section class="offers home__offers"></section>
@@ -188,12 +187,14 @@
               <div class="form__field form__field--mb30 field">
                 <h5 class="field__title">Планируемое количество посетителей:</h5>
 
-                <select name="amount" class="field__select">
-                  <option value="20">до 20 человек</option>
-                  <option value="100">от 20 до 100 человек</option>
-                  <option value="500">от 100 до 500 человек</option>
-                  <option value="1000">более 500 человек</option>
-                </select>
+                <div class="field__select-wrapper">
+                  <select name="amount" class="field__select">
+                    <option value="20">до 20 человек</option>
+                    <option value="100">от 20 до 100 человек</option>
+                    <option value="500">от 100 до 500 человек</option>
+                    <option value="1000">более 500 человек</option>
+                  </select>
+                </div>
               </div>
 
               <div class="form__field field">
@@ -239,9 +240,9 @@
               </label>
 
               <label class="form__check form__check--mb40 check">
-                <input type="checkbox" class="check__input" name="agreement" required>
+                <input type="checkbox" class="check__input" name="agreement" required checked>
                 <span class="check__mark"></span>
-                <span class="check__label">
+                <span class="check__label check__label--s">
                   Я соглашаюсь с пользовательским соглашением и политикой использования персональных данных
                 </span>
               </label>

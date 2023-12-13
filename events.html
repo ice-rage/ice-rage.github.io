@@ -36,7 +36,6 @@
         <h2 class="listing__title section-title">Мероприятия</h2>
 
         <div class="listing__events-list">
-          <!--prettier-ignore-->
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
@@ -117,7 +116,110 @@
           </article>
         </div>
       </section>
+
+      <table class="events__rates-table table">
+        <thread class="table__head">
+          <tr class="table__head-tr">
+            <th class="table__th"></th>
+            <th class="table__th">Тариф «Light»</th>
+            <th class="table__th">Тариф «Promo»</th>
+            <th class="table__th">Тариф «All Stars»</th>
+          </tr>
+        </thread>
+        <tbody class="table__body">
+          <tr class="table__tr">
+            <th class="table__body-th">Стоимость за час</th>
+            <td class="table__td">1 000 ₽</td>
+            <td class="table__td">3 000 ₽</td>
+            <td class="table__td">от 6 000 ₽</td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Ведущий мероприятия</th>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Фотосъемка</th>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Видеосъемка</th>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Организация питания</th>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Ведущий мероприятия</th>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Звуковое сопровождение</th>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Дополнительное освещение</th>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+          <tr class="table__tr">
+            <th class="table__body-th">Клининг</th>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td">
+              <span class="ok"></span>
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot class="table__footer">
+          <tr class="table__footer-tr">
+            <th class="table__footer-th"></th>
+            <th class="table__footer-th">Тариф «Light»</th>
+            <th class="table__footer-th">Тариф «Promo»</th>
+            <th class="table__footer-th">Тариф «All Stars»</th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
+
   </main>
 
   <footer class="page-footer">
@@ -177,12 +279,14 @@
               <div class="form__field form__field--mb30 field">
                 <h5 class="field__title">Планируемое количество посетителей:</h5>
 
-                <select name="amount" class="field__select">
-                  <option value="20">до 20 человек</option>
-                  <option value="100">от 20 до 100 человек</option>
-                  <option value="500">от 100 до 500 человек</option>
-                  <option value="1000">более 500 человек</option>
-                </select>
+                <div class="field__select-wrapper">
+                  <select name="amount" class="field__select">
+                    <option value="20">до 20 человек</option>
+                    <option value="100">от 20 до 100 человек</option>
+                    <option value="500">от 100 до 500 человек</option>
+                    <option value="1000">более 500 человек</option>
+                  </select>
+                </div>
               </div>
 
               <div class="form__field field">
@@ -228,9 +332,9 @@
               </label>
 
               <label class="form__check form__check--mb40 check">
-                <input type="checkbox" class="check__input" name="agreement" required>
+                <input type="checkbox" class="check__input" name="agreement" required checked>
                 <span class="check__mark"></span>
-                <span class="check__label">
+                <span class="check__label check__label--s">
                   Я соглашаюсь с пользовательским соглашением и политикой использования персональных данных
                 </span>
               </label>
