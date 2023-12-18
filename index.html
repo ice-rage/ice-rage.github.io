@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="styles/styles.css?ver=0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="body">
@@ -24,7 +24,8 @@
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
       </nav>
-      <div class="page-header__right-block">
+
+      <div class="page-header__user">
         <a href="#" class="page-header__user-btn btn">Войти</a>
       </div>
     </div>
@@ -33,7 +34,7 @@
   <main class="main">
     <div class="home">
       <header class="main-header home__main-header">
-        <h1 class="main-header__title">Арт - пространство</h1>
+        <h1 class="main-header__title">Арт — пространство</h1>
         <picture class="main-header__picture">
           <img src="assets/images/LENNI.png" class="main-header__img">
         </picture>
@@ -43,7 +44,191 @@
         </p>
       </header>
 
-      <section class="listing home__listing">
+      <section class="offers home__offers">
+        <span class="offers__title">Я хочу:</span>
+
+        <div class="offers__btns">
+          <button type="button" class="offers__event-btn btn">Провести мероприятие</button>
+          <button type="button" class="offers__rent-btn btn">Стать арендатором</button>
+        </div>
+      </section>
+
+      <section class="about home__about">
+        <div class="about__container">
+          <h2 class="about__section-title section-title">О нас</h2>
+
+          <div class="about__first-block">
+            <h3 class="about__title">Проект «Millennials»</h3>
+            <p class="about__text about__text--mt50">
+              Вдохновлен молодыми идейными людьми, увлеченными творчеством, эмоциями и
+              желанием сделать мир лучше, проявить себя. У них есть талант и стремление,
+              у нас — возможность помочь им воплотить их мечту в реальность.
+            </p>
+          </div>
+
+          <div class="about__second-block">
+            <div class="about__first-picture-area">
+              <picture class="about__first-picture">
+                <img class="about__img" src="assets/images/about1.jpg">
+              </picture>
+            </div>
+
+            <div class="about__second-picture-area">
+              <picture class="about__second-picture">
+                <img class="about__img" src="assets/images/about2.jpg">
+              </picture>
+            </div>
+
+            <div class="about__title-area">
+              <h3 class="about__title about__title--w868">
+                Мы предоставляем площади для вашего мероприятия</h3>
+            </div>
+
+            <div class="about__text-area">
+              <p class="about__text">
+                И оказываем помощь с организацией, если вам это нужно.
+                <br>Наша цель: вовлечь в культурную жизнь города как можно больше людей,
+                помочь молодым ребятам сделать первые шаги к своей мечте и рассказать всем
+                о том, что их волнует.
+              </p>
+            </div>
+          </div>
+
+          <div class="about__third-block">
+            <picture class="about__third-picture">
+              <img class="about__third-img" src="assets/images/about3.jpg">
+            </picture>
+
+            <div class="about__third-block-wrapper">
+              <p class="about__text about__text--mb90">
+                Мы уже успешно организовали и провели более 100 проектов. Посмотрите, как
+                это было классно.
+              </p>
+
+              <div class="about__arrow-link arrow-link">
+                <a href="#" class="arrow-link__link link">Смотреть</a>
+
+                <a href="#" class="arrow-link__arrow arrow">
+                  <svg class="arrow__icon" width="91" height="60">
+                    <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                  </svg>
+                </a>
+              </div>
+              </a>
+            </div>
+          </div>
+      </section>
+
+      <section class="home__events-listing">
+        <div class="listing events__listing">
+          <h2 class="listing__title section-title">Мероприятия</h2>
+
+          <div class="listing__events-list @@class">
+            <article class="event-card listing__event-card">
+              <a href="event.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img src="assets/images/events/nirvana.png" alt="nirvana" class="event-card__img">
+                </picture>
+
+                <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana. Nirvana</h4>
+
+                <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.</p>
+
+                <time datetime="2022-12-07T18:00" class="event-card__time">07.12.2022 | начало 18.00</time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="event.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img src="assets/images/events/stuff.png" alt="stuff" class="event-card__img">
+                </picture>
+
+                <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>
+
+                <p class="event-card__description">Один из самых популярных подкастов в мире. В нем авторы объясняют, как устроены разные вещи.</p>
+
+                <time datetime="2022-12-14T18:30" class="event-card__time">14.12.2022 | начало 18.30</time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="event.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img src="assets/images/events/sade.png" alt="sade" class="event-card__img">
+                </picture>
+
+                <h4 class="event-card__title">Вечер | The Best of Sade</h4>
+
+                <p class="event-card__description">Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.</p>
+
+                <time datetime="2022-12-16T20:00" class="event-card__time">16.12.2022 | начало 20.00</time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="event.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img src="assets/images/events/malevich.png" alt="malevich" class="event-card__img">
+                </picture>
+
+                <h4 class="event-card__title">Выставка Малевича в Томске</h4>
+
+                <p class="event-card__description">Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займет два этажа павильона.</p>
+
+                <time datetime="2022-12-16T20:00" class="event-card__time">16.12.2022 | начало 20.00</time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="event.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img src="assets/images/events/tatler.png" alt="tatler" class="event-card__img">
+                </picture>
+
+                <h4 class="event-card__title">Мастер-класс по студийной съемке от Tatler</h4>
+
+                <p class="event-card__description">Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.</p>
+
+                <time datetime="2022-12-25T13:00" class="event-card__time">25.12.2022 | начало 13.00</time>
+              </a>
+            </article>
+            <article class="event-card listing__event-card">
+              <a href="event.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img src="assets/images/events/hatters.png" alt="hatters" class="event-card__img">
+                </picture>
+
+                <h4 class="event-card__title">Повеселимся на славу на концерте The Hatters</h4>
+
+                <p class="event-card__description">Российская джипси-фолк-рок-группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко</p>
+
+                <time datetime="2022-12-27T10:00" class="event-card__time">27.12.2022 | начало 10.00</time>
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <div class="slider listing__slider">
+          <div class="slider__arrow arrow arrow--180deg">
+            <svg class="arrow__icon" width="91" height="60">
+              <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+            </svg>
+          </div>
+
+          <div class="slider__items">
+            <div class="slider__item"></div>
+            <div class="slider__item"></div>
+            <div class="slider__item slider__item--active"></div>
+            <div class="slider__item"></div>
+            <div class="slider__item"></div>
+          </div>
+
+          <div class="slider__arrow arrow">
+            <svg class="arrow__icon" width="91" height="60">
+              <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="listing home__blog-listing">
         <h2 class="listing__title section-title">Блог</h2>
 
         <div class="listing__article-list">
@@ -61,13 +246,13 @@
                 <h4 class="article-card__title">Фотосессия в стенах Театра драмы</h4>
 
                 <div class="article-card__arrow arrow">
-                  <svg class="arrow__icon" width="92" height="62">
+                  <svg class="arrow__icon" width="91" height="60">
                     <use xlink:href="assets/icons/symbols.svg#arrow"></use>
                   </svg>
                 </div>
               </a>
 
-              <p class="article-card__description">Организовывая фотосессию для локального бренда одежды, мы смогли воплотить все пожелания заказчика, и у нас получилась отличная работа. Смотрите, как это было</p>
+              <p class="article-card__description">Организовывая фотосессию для локального бренда одежды, мы смогли воплотить все пожелания заказчика, и у нас получилась отличная работа. Смотрите, как это было.</p>
             </div>
           </article>
           <article class="article-card listing__arctile-card">
@@ -84,7 +269,7 @@
                 <h4 class="article-card__title">Выставка VR в Томске</h4>
 
                 <div class="article-card__arrow arrow">
-                  <svg class="arrow__icon" width="92" height="62">
+                  <svg class="arrow__icon" width="91" height="60">
                     <use xlink:href="assets/icons/symbols.svg#arrow"></use>
                   </svg>
                 </div>
@@ -107,7 +292,7 @@
                 <h4 class="article-card__title">Rocking radio в заброшенном ангаре</h4>
 
                 <div class="article-card__arrow arrow">
-                  <svg class="arrow__icon" width="92" height="62">
+                  <svg class="arrow__icon" width="91" height="60">
                     <use xlink:href="assets/icons/symbols.svg#arrow"></use>
                   </svg>
                 </div>
@@ -118,21 +303,140 @@
           </article>
         </div>
 
-        <a href="#" class="listing__link">Смотреть все</a>
+        <a href="#" class="listing__link link">Смотреть все</a>
       </section>
 
-      <section class="offers home__offers"></section>
-      <section class="about home__about"></section>
-      <section class="upcoming home__upcoming"></section>
-      <section class="listing home__listing"></section>
-      <section class="contacts home__contacts"></section>
-      <div class="doit home__doit"></div>
+      <section class="info home__info">
+        <div class="info__container">
+          <h2 class="info__title section-title">Контакты</h2>
+
+          <div class="info__wrapper">
+            <div class="info__items">
+              <div class="info-item">
+                <div class="info-item__img">
+                  <svg class="info-item__icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#location"></use>
+                  </svg>
+                </div>
+
+                <div class="info-item__content">
+                  <h4 class="info-item__title">Томск, Белая 8</h4>
+                  <p class="info-item__data">2 этаж</p>
+                  <p class="info-item__data">оф. 207-208</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-item__img">
+                  <svg class="info-item__icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#rent"></use>
+                  </svg>
+                </div>
+
+                <div class="info-item__content">
+                  <h4 class="info-item__title">Отдел аренды</h4>
+                  <a href="tel:74993500730" class="info-item__data">+7 499 350 0730</a>
+                  <a href="mailto:hi@tagree.ru" class="info-item__data">hi@tagree.ru</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-item__img">
+                  <svg class="info-item__icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#events"></use>
+                  </svg>
+                </div>
+
+                <div class="info-item__content">
+                  <h4 class="info-item__title">Отдел мероприятий</h4>
+                  <a href="tel:74993500730" class="info-item__data">+7 499 350 0730</a>
+                  <a href="mailto:hi@tagree.ru" class="info-item__data">hi@tagree.ru</a>
+                </div>
+              </div>
+            </div>
+            <div class="info__map">
+              <picture>
+                <img src="assets/images/map.jpg" alt="map" class="info__img">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home__blockquote blockquote">
+        <span class="blockquoute__first-line">Просто делайте, что нравится,</span>
+        <span class="blockquoute__second-line">а мы вам поможем</span>
+      </section>
     </div>
   </main>
 
   <footer class="page-footer">
-    <div>
-      <p>THIS IS THE PLACE FOR THE PAGE FOOTER</p>
+    <div class="page-footer__container">
+      <div class="page-footer__border">
+        <div class="page-footer__decoration decoration decoration--invert"></div>
+        <div class="page-footer__decoration decoration"></div>
+      </div>
+
+      <div class="page-footer__wrapper">
+        <div class="page-footer__left-block">
+          <nav class="page-footer__nav">
+            <a href="" class="page-footer__nav-link">Календарь мероприятий</a>
+            <a href="" class="page-footer__nav-link">Провести мероприятие</a>
+            <a href="" class="page-footer__nav-link">Стать арендатором</a>
+            <a href="" class="page-footer__nav-link">Наши проекты</a>
+            <a href="" class="page-footer__nav-link">Контакты</a>
+          </nav>
+
+          <div class="page-footer__copyright">© Millennials 2022</div>
+
+          <div class="page-footer__politics">
+            <a href="#" target="_blank" class="page-footer__confidentiality">
+              Политика конфиденциальности
+            </a>
+            <a href="#" target="_blank" class="page-footer__cookies">Cookies</a>
+          </div>
+        </div>
+
+        <div class="page-footer__center-block">
+          <a href="#" class="page-footer__sn-link">
+            <svg class="page-footer__sn-icon" width="58" height="58">
+              <use xlink:href="assets/icons/symbols.svg#instagram"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="page-footer__sn-link">
+            <svg class="page-footer__sn-icon" width="58" height="58">
+              <use xlink:href="assets/icons/symbols.svg#vkontakte"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="page-footer__right-block">
+          <form class="page-footer__subscription-form subscription-form">
+            <h4 class="subscription-form__title">Подпишись и будь в курсе происходящего</h4>
+
+            <div class="subscription-form__wrapper">
+              <input type="email" name="email" placeholder="E-mail" class="subscription-form__input" required>
+              <button type="submit" class="subscription-form__submit">Подписаться</button>
+            </div>
+
+            <label class="subscription-form__check check">
+              <input type="checkbox" class="check__input" name="agreement" required checked>
+              <span class="check__mark"></span>
+              <span class="check__label check__label--fsz14">
+                Согласен на обработку персональных данных
+              </span>
+            </label>
+          </form>
+
+          <div class="page-footer__creator">
+            <span class="page-footer__creator-label">Создание и продвижение</span>
+            <a href="https://tagree.ru/" target="_blank" class="page-footer__creator-link">
+              <img src="assets/images/tagree.png" alt="tagree" class="page-footer__creator-img">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -242,7 +546,7 @@
               <label class="form__check form__check--mb40 check">
                 <input type="checkbox" class="check__input" name="agreement" required checked>
                 <span class="check__mark"></span>
-                <span class="check__label check__label--s">
+                <span class="check__label check__label--fw400 check__label--fsz14">
                   Я соглашаюсь с пользовательским соглашением и политикой использования персональных данных
                 </span>
               </label>

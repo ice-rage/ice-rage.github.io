@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="styles/styles.css?ver=0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="body">
@@ -24,33 +24,61 @@
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
       </nav>
-      <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn btn">Войти</a>
+
+      <div class="page-header__user">
+        <a href="#" class="page-header__profile-link link">Александр С.</a>
+        <a href="#" class="page-header__log-out-link link">
+          <svg class="page-header__log-out-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#log-out"></use>
+          </svg>
+        </a>
       </div>
     </div>
   </header>
 
   <main class="main">
+    <div class="event__breadcrumb breadcrumb">
+      <ul class="breadcrumb__items">
+        <li class="breadcrumb__item">
+          <a href="index.html" class="breadcrumb__item-link link">Главная</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a href="events.html" class="breadcrumb__item-link link">Мероприятия</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a href="event.html" class="breadcrumb__item-link link">Вечер | The Best of Sade</a>
+        </li>
+      </ul>
+    </div>
+
     <article class="event">
       <h1 class="event__title">Вечер | The Best of Sade</h1>
 
       <div class="event__main-info">
         <div class="event__info-block event__info-block--left">
+          <div class="event__decoration decoration decoration--invert"></div>
+
           <span class="event__label event__label--f30">16/12/2022</span>
           <span class="event__label event__label--f16">Кафе «Птичка»</span>
+
+          <div class="event__decoration decoration decoration--invert"></div>
         </div>
 
         <picture class="event__picture">
-          <img src="assets/images/events/sade.png" Alt="Sade" class="event__img">
+          <img src="assets/images/events/sade.png" alt="Sade" class="event__img">
         </picture>
 
         <div class="event__info-block">
+          <div class="event__decoration decoration"></div>
+
           <div class="event__time">
             <span class="event__label event__label--f30">20.00</span>
             <span class="event__label event__label--f16">начало</span>
           </div>
 
           <span class="event__label event__label--f16">Ленина 10 | 2 этаж</span>
+
+          <div class="event__decoration decoration"></div>
         </div>
       </div>
 
@@ -172,7 +200,6 @@
           </label>
         </div>
 
-
         <div class="reserve__scheme">
           <div class="reserve__scheme-container">
             <label class="reserve__scheme-title">Сцена</label>
@@ -244,8 +271,72 @@
   </main>
 
   <footer class="page-footer">
-    <div>
-      <p>THIS IS THE PLACE FOR THE PAGE FOOTER</p>
+    <div class="page-footer__container">
+      <div class="page-footer__border">
+        <div class="page-footer__decoration decoration decoration--invert"></div>
+        <div class="page-footer__decoration decoration"></div>
+      </div>
+
+      <div class="page-footer__wrapper">
+        <div class="page-footer__left-block">
+          <nav class="page-footer__nav">
+            <a href="" class="page-footer__nav-link">Календарь мероприятий</a>
+            <a href="" class="page-footer__nav-link">Провести мероприятие</a>
+            <a href="" class="page-footer__nav-link">Стать арендатором</a>
+            <a href="" class="page-footer__nav-link">Наши проекты</a>
+            <a href="" class="page-footer__nav-link">Контакты</a>
+          </nav>
+
+          <div class="page-footer__copyright">© Millennials 2022</div>
+
+          <div class="page-footer__politics">
+            <a href="#" target="_blank" class="page-footer__confidentiality">
+              Политика конфиденциальности
+            </a>
+            <a href="#" target="_blank" class="page-footer__cookies">Cookies</a>
+          </div>
+        </div>
+
+        <div class="page-footer__center-block">
+          <a href="#" class="page-footer__sn-link">
+            <svg class="page-footer__sn-icon" width="58" height="58">
+              <use xlink:href="assets/icons/symbols.svg#instagram"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="page-footer__sn-link">
+            <svg class="page-footer__sn-icon" width="58" height="58">
+              <use xlink:href="assets/icons/symbols.svg#vkontakte"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="page-footer__right-block">
+          <form class="page-footer__subscription-form subscription-form">
+            <h4 class="subscription-form__title">Подпишись и будь в курсе происходящего</h4>
+
+            <div class="subscription-form__wrapper">
+              <input type="email" name="email" placeholder="E-mail" class="subscription-form__input" required>
+              <button type="submit" class="subscription-form__submit">Подписаться</button>
+            </div>
+
+            <label class="subscription-form__check check">
+              <input type="checkbox" class="check__input" name="agreement" required checked>
+              <span class="check__mark"></span>
+              <span class="check__label check__label--fsz14">
+                Согласен на обработку персональных данных
+              </span>
+            </label>
+          </form>
+
+          <div class="page-footer__creator">
+            <span class="page-footer__creator-label">Создание и продвижение</span>
+            <a href="https://tagree.ru/" target="_blank" class="page-footer__creator-link">
+              <img src="assets/images/tagree.png" alt="tagree" class="page-footer__creator-img">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 </body>
