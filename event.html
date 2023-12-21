@@ -25,34 +25,33 @@
         <a href="#" class="page-header__nav-link">Контакты</a>
       </nav>
 
-      <div class="page-header__user">
-        <a href="#" class="page-header__profile-link link">Александр С.</a>
-        <a href="#" class="page-header__log-out-link link">
-          <svg class="page-header__log-out-icon" width="24" height="24">
-            <use xlink:href="assets/icons/symbols.svg#log-out"></use>
-          </svg>
-        </a>
+      <div class="page-header__right-block">
+        <a href="#" class="page-header__user-btn">Войти</a>
       </div>
     </div>
   </header>
 
-  <main class="main">
-    <div class="event__breadcrumb breadcrumb">
-      <ul class="breadcrumb__items">
-        <li class="breadcrumb__item">
-          <a href="index.html" class="breadcrumb__item-link link">Главная</a>
+  <div class="breadcrumbs ">
+    <div class="breadcrumbs__container">
+      <ul class="breadcrumbs__items">
+
+        <li class="breadcrumbs__item">
+          <a href="/" class="breadcrumbs__item-link link">Главная</a>
         </li>
-        <li class="breadcrumb__item">
-          <a href="events.html" class="breadcrumb__item-link link">Мероприятия</a>
+        <li class="breadcrumbs__item">
+          <a href="events.html" class="breadcrumbs__item-link link">Мероприятия</a>
         </li>
-        <li class="breadcrumb__item">
-          <a href="event.html" class="breadcrumb__item-link link">Вечер | The Best of Sade</a>
+        <li class="breadcrumbs__item">
+          <a href="event.html" class="breadcrumbs__item-link link">Вечер | The Best of Sade</a>
         </li>
+
       </ul>
     </div>
+  </div>
 
+  <main>
     <article class="event">
-      <h1 class="event__title">Вечер | The Best of Sade</h1>
+      <h1 class="event__title title">Вечер | The Best of Sade</h1>
 
       <div class="event__main-info">
         <div class="event__info-block event__info-block--left">
@@ -65,7 +64,7 @@
         </div>
 
         <picture class="event__picture">
-          <img src="assets/images/events/sade.png" alt="Sade" class="event__img">
+          <img src="assets/images/event/main.jpg" alt="sade" class="event__img">
         </picture>
 
         <div class="event__info-block">
@@ -85,7 +84,6 @@
       <div class="event__content content">
         <section class="event__program">
           <h5>Программа мероприятия:</h5>
-
           <ul>
             <li>20:15 — Приветствие гостей</li>
             <li>20:30 — Первая подача блюд | Салаты</li>
@@ -100,21 +98,20 @@
 
         <section class="event__description">
           <h5>The Best of Sade</h5>
-
           <p>
-            Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9 треков,
-            включая самые популярные хиты группы, раритеты и их любимые треки.
+            Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9 треков, включая
+            самые популярные хиты группы, раритеты и их любимые треки.
           </p>
-
           <p>
             Группа продемонстрировала необычайное долголетие и креативность своей творческой
             карьеры.
-            <br>Она лидировала в музыкальных чартах с 1994 по 1995 год, став четырехкратно
+            <br>
+            Она лидировала в музыкальных чартах с 1994 по 1995 год, став четырехкратно
             платиновой в США и продав более 2 миллионов копий в Европе.
           </p>
         </section>
 
-        <section class="event__tracklist">
+        <div class="event__tracklist">
           <ol>
             <li>Your Love Is King</li>
             <li>Hang On To Your Love</li>
@@ -126,11 +123,11 @@
             <li>Love Is Stronger Than Pride</li>
             <li>Paradise</li>
           </ol>
-        </section>
+        </div>
       </div>
 
       <form class="reserve">
-        <div class="reserve__checks">
+        <section class="reserve__checks">
           <h4 class="reserve__section-title">Забронировать столик</h4>
 
           <label class="reserve__check check check--red">
@@ -198,22 +195,22 @@
             <span class="check__mark"></span>
             <span class="check__label">11 стол</span>
           </label>
-        </div>
+        </section>
 
         <div class="reserve__scheme">
-          <div class="reserve__scheme-container">
-            <label class="reserve__scheme-title">Сцена</label>
+          <section class="reserve__scheme-container">
+            <h4 class="reserve__scheme-title">Сцена</h4>
 
             <div class="reserve__scheme-wrapper">
               <svg class="reserve__scene scene" width="780" height="399">
                 <use xlink:href="assets/icons/symbols.svg#restaurant-map"></use>
               </svg>
             </div>
-          </div>
+          </section>
         </div>
 
-        <div class="reserve__order">
-          <label class="reserve__section-title">Ваши пригласительные билеты</label>
+        <section class="reserve__order">
+          <h4 class="reserve__section-title">Ваши пригласительные билеты</h4>
 
           <div class="reserve__tickets-list">
             <div class="reserve__tickets">
@@ -230,10 +227,10 @@
           <div class="reserve__total" data-caption="Сумма" data-currency="₽">17600</div>
 
           <button type="submit" class="reserve__submit btn btn--red">Купить билеты</button>
-        </div>
+        </section>
 
-        <div class="reserve__legend">
-          <label class="reserve__section-title">Стоимость пригласительного билета</label>
+        <section class="reserve__legend">
+          <h4 class="reserve__section-title">Стоимость пригласительного билета</h4>
 
           <div class="reserve__prices-list">
             <div class="reserve__prices">
@@ -265,7 +262,7 @@
               <div class="reserve__designation">Забронировано</div>
             </div>
           </div>
-        </div>
+        </section>
       </form>
     </article>
   </main>
@@ -323,7 +320,7 @@
             <label class="subscription-form__check check">
               <input type="checkbox" class="check__input" name="agreement" required checked>
               <span class="check__mark"></span>
-              <span class="check__label check__label--fsz14">
+              <span class="check__label check__label--fsz14 check__label--fw300">
                 Согласен на обработку персональных данных
               </span>
             </label>

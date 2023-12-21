@@ -25,31 +25,30 @@
         <a href="#" class="page-header__nav-link">Контакты</a>
       </nav>
 
-      <div class="page-header__user">
-        <a href="#" class="page-header__profile-link link">Александр С.</a>
-        <a href="#" class="page-header__log-out-link link">
-          <svg class="page-header__log-out-icon" width="24" height="24">
-            <use xlink:href="assets/icons/symbols.svg#log-out"></use>
-          </svg>
-        </a>
+      <div class="page-header__right-block">
+        <a href="#" class="page-header__user-btn">Войти</a>
       </div>
     </div>
   </header>
 
+  <div class="breadcrumbs ">
+    <div class="breadcrumbs__container">
+      <ul class="breadcrumbs__items">
+
+        <li class="breadcrumbs__item">
+          <a href="/" class="breadcrumbs__item-link link">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a href="events.html" class="breadcrumbs__item-link link">Мероприятия</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
   <main class="main">
     <div class="events">
-      <div class="events__breadcrumb breadcrumb">
-        <ul class="breadcrumb__items">
-          <li class="breadcrumb__item">
-            <a href="index.html" class="breadcrumb__item-link link">Главная</a>
-          </li>
-          <li class="breadcrumb__item">
-            <a href="events.html" class="breadcrumb__item-link link">Мероприятия</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="listing events__listing">
+      <section class="listing events__listing">
         <h2 class="listing__title section-title">Мероприятия</h2>
 
         <div class="listing__events-list listing__events-list--wrap">
@@ -132,17 +131,17 @@
             </a>
           </article>
         </div>
-      </div>
 
-      <div class="events__arrow-link arrow-link arrow-link--vertical">
-        <a href="#" class="arrow-link__link link">Показать еще</a>
+        <div class="events__arrow-link arrow-link arrow-link--vertical">
+          <a href="#" class="arrow-link__link link">Показать еще</a>
 
-        <a href="#" class="arrow-link__arrow arrow arrow--90deg">
-          <svg class="arrow__icon" width="91" height="91">
-            <use xlink:href="assets/icons/symbols.svg#arrow"></use>
-          </svg>
-        </a>
-      </div>
+          <a href="#" class="arrow-link__arrow arrow">
+            <svg class="arrow__icon" width="91" height="91">
+              <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+            </svg>
+          </a>
+        </div>
+      </section>
 
       <section class="events__additional-services additional-services">
         <h2 class="section-title additional-services__title">Дополнительные услуги</h2>
@@ -153,19 +152,19 @@
           мероприятия на высшем уровне.
         </p>
         <table class="events__rates-table table">
-          <thread class="table__head">
+          <thead class="table__head">
             <tr class="table__head-tr">
               <th class="table__th"></th>
               <th class="table__th">Тариф «Light»</th>
               <th class="table__th">Тариф «Promo»</th>
               <th class="table__th">Тариф «All Stars»</th>
             </tr>
-          </thread>
+          </thead>
           <tbody class="table__body">
             <tr class="table__tr">
               <th class="table__body-th">Стоимость за час</th>
-              <td class="table__td">1 000 ₽</td>
-              <td class="table__td">3 000 ₽</td>
+              <td class="table__td">1 000</td>
+              <td class="table__td">3 000</td>
               <td class="table__td">от 6 000 ₽</td>
             </tr>
             <tr class="table__tr">
@@ -243,7 +242,6 @@
               </td>
             </tr>
           </tbody>
-
           <tfoot class="table__footer">
             <tr class="table__footer-tr">
               <th class="table__footer-th"></th>
@@ -256,7 +254,7 @@
       </section>
 
       <section class="offers events__offers">
-        <span class="offers__title">Я хочу:</span>
+        <h2 class="offers__title">Я хочу:</h2>
 
         <div class="offers__btns">
           <button type="button" class="offers__event-btn btn">Провести мероприятие</button>
@@ -264,60 +262,64 @@
         </div>
       </section>
 
-      <div class="events__info info info--vertical">
+      <section class="info events__info">
         <div class="info__container">
-          <div class="info__wrapper">
-            <div class="info__items">
-              <div class="info-item">
-                <div class="info-item__img">
-                  <svg class="info-item__icon" width="24" height="24">
-                    <use xlink:href="assets/icons/symbols.svg#prices"></use>
-                  </svg>
-                </div>
-
-                <div class="info-item__content">
-                  <h4 class="info-item__title">Цены</h4>
-                  <p class="info-item__data">
-                    Цены, указанные на сайте, носят информационный характер. Мы
-                    придерживаемся индивидуального подхода в работе с клиентом.
-                  </p>
-                </div>
+          <div class="info__items info__items--vertical">
+            <div class="info-item ">
+              <div class="info-item__img">
+                <svg class="info-item__icon" width="24" height="24">
+                  <use xlink:href="assets/icons/symbols.svg#prices"></use>
+                </svg>
               </div>
 
-              <div class="info-item">
-                <div class="info-item__img">
-                  <svg class="info-item__icon" width="24" height="24">
-                    <use xlink:href="assets/icons/symbols.svg#contacts"></use>
-                  </svg>
-                </div>
+              <div class="info-item__content">
 
-                <div class="info-item__content">
-                  <h4 class="info-item__title">Контакты</h4>
-                  <p class="info-item__data">Отдел организации мероприятий</p>
-                  <a href="tel:74993500730" class="info-item__data">+7 499 350 0730</a>
-                  <a href="mailto:hi@tagree.ru" class="info-item__data">hi@tagree.ru</a>
-                </div>
+                <h4 class="info-item__title">Цены</h4>
+                <p class="info-item__data">
+                  Цены, указанные на сайте, носят информационный характер. Мы придерживаемся
+                  индивидуального подхода в работе с клиентом.
+                </p>
+
+              </div>
+            </div>
+
+            <div class="info-item ">
+              <div class="info-item__img">
+                <svg class="info-item__icon" width="24" height="24">
+                  <use xlink:href="assets/icons/symbols.svg#contacts"></use>
+                </svg>
               </div>
 
-              <div class="info-item">
-                <div class="info-item__img">
-                  <svg class="info-item__icon" width="24" height="24">
-                    <use xlink:href="assets/icons/symbols.svg#advantage"></use>
-                  </svg>
-                </div>
+              <div class="info-item__content">
 
-                <div class="info-item__content">
-                  <h4 class="info-item__title">Преимущество</h4>
-                  <p class="info-item__data">
-                    Мы имеем все возможности для того, чтобы помочь как малому бизнесу и
-                    молодым талантам, так и большим корпорациям и холдингам.
-                  </p>
-                </div>
+                <h4 class="info-item__title">Контакты</h4>
+                <p class="info-item__data">Отдел организации мероприятий</p>
+                <a href="tel:74993500730" class="info-item__data">+7 499 350 0730</a>
+                <a href="mailto:hi@tagree.ru" class="info-item__data">hi@tagree.ru</a>
+
+              </div>
+            </div>
+
+            <div class="info-item ">
+              <div class="info-item__img">
+                <svg class="info-item__icon" width="24" height="24">
+                  <use xlink:href="assets/icons/symbols.svg#advantage"></use>
+                </svg>
+              </div>
+
+              <div class="info-item__content">
+
+                <h4 class="info-item__title">Преимущество</h4>
+                <p>
+                  Мы имеем все возможности для того, чтобы помочь как малому бизнесу и молодым
+                  талантам, так и большим корпорациям и холдингам.
+                </p>
+
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </main>
 
@@ -374,7 +376,7 @@
             <label class="subscription-form__check check">
               <input type="checkbox" class="check__input" name="agreement" required checked>
               <span class="check__mark"></span>
-              <span class="check__label check__label--fsz14">
+              <span class="check__label check__label--fsz14 check__label--fw300">
                 Согласен на обработку персональных данных
               </span>
             </label>
@@ -497,7 +499,7 @@
               <label class="form__check form__check--mb40 check">
                 <input type="checkbox" class="check__input" name="agreement" required checked>
                 <span class="check__mark"></span>
-                <span class="check__label check__label--fw400 check__label--fsz14">
+                <span class="check__label check__label--fsz14">
                   Я соглашаюсь с пользовательским соглашением и политикой использования персональных данных
                 </span>
               </label>
