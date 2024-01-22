@@ -53,8 +53,6 @@ a {
 img {
   height: auto;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 input,
 textarea,
@@ -115,6 +113,9 @@ textarea:focus::placeholder {
   transition: color 0.2s;
 }
 button {
+  border: none;
+  outline: none;
+  font-family: "Open Sans", "sans-serif";
   cursor: pointer;
 }
 .section-title {
@@ -173,7 +174,6 @@ button {
   outline: none;
   background-color: transparent;
   color: #1F1F1F;
-  font-family: "Open Sans", "sans-serif";
   font-weight: 600;
   font-size: 16px;
   line-height: 1.362;
@@ -202,6 +202,7 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: transparent;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
   cursor: pointer;
@@ -258,6 +259,9 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -473,7 +477,7 @@ button {
   margin-bottom: 0;
 }
 .subscription-form__title {
-  margin: 0 0 24px;
+  margin: 0 0 13px 7px;
   font-weight: 600;
 }
 .subscription-form__wrapper {
@@ -526,8 +530,8 @@ button {
 }
 .decoration {
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#1C1B1B), color-stop(82.86%, rgba(255, 255, 255, 0)));
-  background: linear-gradient(90deg, #1C1B1B 0%, rgba(255, 255, 255, 0) 82.86%);
+  background: -webkit-gradient(linear, left top, right top, from(#1C1B1B), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(90deg, #1C1B1B 0%, rgba(255, 255, 255, 0) 100%);
 }
 .decoration--invert {
   background: -webkit-gradient(linear, right top, left top, from(#1C1B1B), color-stop(82.86%, rgba(255, 255, 255, 0)));
@@ -542,6 +546,7 @@ button {
           justify-content: space-between;
   width: 39.355%;
   max-width: 525px;
+  max-height: 60px;
 }
 .slider__items {
   display: -webkit-box;
@@ -1252,7 +1257,7 @@ button {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  margin-bottom: 15px;
+  margin: 0 16px 15px 0;
 }
 .reserve__tickets:last-child {
   margin-bottom: 0;
@@ -1265,15 +1270,14 @@ button {
   font-size: 18px;
 }
 .reserve__total {
-  -ms-flex-item-align: center;
-      align-self: center;
-  margin-bottom: 40px;
+  margin-left: 112px;
+  margin-bottom: 53px;
   font-weight: 600;
   font-size: 20px;
 }
 .reserve__total::before {
   content: attr(data-caption);
-  margin-right: 30px;
+  margin-right: 33px;
 }
 .reserve__submit {
   width: 100%;
@@ -1392,7 +1396,10 @@ button {
   text-transform: lowercase;
 }
 .event {
-  padding: 38px 40px 150px;
+  padding: 38px 40px 90px;
+}
+.event__title {
+  padding-left: 22px;
 }
 .event__main-info {
   display: -webkit-box;
@@ -1401,11 +1408,8 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   max-width: 943px;
-  margin: 80px auto;
+  margin: 80px auto 0;
 }
 .event__info-block {
   display: -webkit-box;
@@ -1416,15 +1420,25 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 11px;
+  margin: 223px 0 217px 0;
+}
+.event__info-block .decoration {
+  max-width: 160px;
 }
 .event__info-block--left {
-  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.event__info-block--left .decoration {
+  max-width: 139px;
 }
 .event__decoration {
   height: 1px;
 }
 .event__label {
   font-family: "mak", "sans-serif";
+  line-height: 1.2;
   text-transform: uppercase;
 }
 .event__label--f30 {
@@ -1463,18 +1477,26 @@ button {
           align-items: flex-end;
   gap: 12px;
 }
-.event__program {
-  margin-bottom: 75px;
+.event__time :last-child {
+  margin-bottom: 4px;
 }
-.event__tracklist {
-  margin-top: 50px;
-  margin-bottom: 80px;
+.event__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1414px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.event__content {
+  margin: 80px 0;
 }
 .events {
-  padding: 40px 0 90px;
+  padding-bottom: 90px;
 }
 .events__listing {
-  margin-top: 160px;
+  margin-top: 138px;
 }
 .events__arrow-link {
   -ms-flex-item-align: center;
