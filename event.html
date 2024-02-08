@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Lenni Art</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.min.css?ver=0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +24,27 @@
         <a href="#" class="page-header__nav-link">Блог</a>
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
+
+        <div class="page-header__nav-user">
+          <a href="#" class="page-header__nav-user-link">Александр С.</a>
+
+          <a href="#" class="page-header__nav-logout">
+            <svg class="page-header__nav-logout-icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#logout"></use>
+            </svg>
+          </a>
+        </div>
+
       </nav>
 
       <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn">Войти</a>
+        <a href="#" class="page-header__user-btn">Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
+
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
       </div>
     </div>
   </header>
@@ -64,7 +82,17 @@
         </div>
 
         <picture class="event__picture">
-          <img src="assets/images/event/main.jpg" alt="sade" class="event__img">
+          <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/event/main_245w.webp">
+
+          <source media="(max-width: 1169px)" srcset="assets/images/event/main_245w.jpg">
+
+          <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/event/main_426w.webp">
+
+          <source media="(max-width: 1659px)" srcset="assets/images/event/main_426w.jpg">
+
+          <source type="image/webp" srcset="assets/images/event/main_497w.webp">
+
+          <img src="assets/images/event/main_497w.jpg" alt="sade" class="event__img">
         </picture>
 
         <div class="event__info-block">

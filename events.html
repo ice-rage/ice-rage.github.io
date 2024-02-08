@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Lenni Art</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.min.css?ver=0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +24,27 @@
         <a href="#" class="page-header__nav-link">Блог</a>
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
+
+        <div class="page-header__nav-user">
+          <a href="#" class="page-header__nav-user-link">Александр С.</a>
+
+          <a href="#" class="page-header__nav-logout">
+            <svg class="page-header__nav-logout-icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#logout"></use>
+            </svg>
+          </a>
+        </div>
+
       </nav>
 
       <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn">Войти</a>
+        <a href="#" class="page-header__user-btn">Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
+
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
       </div>
     </div>
   </header>
@@ -51,11 +69,25 @@
       <section class="listing events__listing">
         <h2 class="listing__title section-title">Мероприятия</h2>
 
-        <div class="listing__events-list listing__events-list--wrap">
+        <div class="listing__events-list listing__events-list">
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
-                <img src="assets/images/events/nirvana.png" alt="nirvana" class="event-card__img">
+                <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/nirvana_405w.webp">
+
+                <source media="(max-width: 649px)" srcset="assets/images/events/nirvana_405w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/nirvana_339w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/events/nirvana_339w.jpg">
+
+                <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/nirvana_393w.webp">
+
+                <source media="(max-width: 1659px)" srcset="assets/images/events/nirvana_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/events/nirvana_405w.webp">
+
+                <img src="assets/images/events/nirvana_405w.jpg" alt="nirvana" class="event-card__img">
               </picture>
 
               <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana. Nirvana</h4>
@@ -68,7 +100,21 @@
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
-                <img src="assets/images/events/stuff.png" alt="stuff" class="event-card__img">
+                <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/stuff_405w.webp">
+
+                <source media="(max-width: 649px)" srcset="assets/images/events/stuff_405w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/stuff_339w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/events/stuff_339w.jpg">
+
+                <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/stuff_393w.webp">
+
+                <source media="(max-width: 1659px)" srcset="assets/images/events/stuff_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/events/stuff_405w.webp">
+
+                <img src="assets/images/events/stuff_405w.jpg" alt="stuff" class="event-card__img">
               </picture>
 
               <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>
@@ -81,7 +127,21 @@
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
-                <img src="assets/images/events/sade.png" alt="sade" class="event-card__img">
+                <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/sade_405w.webp">
+
+                <source media="(max-width: 649px)" srcset="assets/images/events/sade_405w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/sade_339w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/events/sade_339w.jpg">
+
+                <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/sade_393w.webp">
+
+                <source media="(max-width: 1659px)" srcset="assets/images/events/sade_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/events/sade_405w.webp">
+
+                <img src="assets/images/events/sade_405w.jpg" alt="sade" class="event-card__img">
               </picture>
 
               <h4 class="event-card__title">Вечер | The Best of Sade</h4>
@@ -94,7 +154,21 @@
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
-                <img src="assets/images/events/malevich.png" alt="malevich" class="event-card__img">
+                <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/malevich_405w.webp">
+
+                <source media="(max-width: 649px)" srcset="assets/images/events/malevich_405w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/malevich_339w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/events/malevich_339w.jpg">
+
+                <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/malevich_393w.webp">
+
+                <source media="(max-width: 1659px)" srcset="assets/images/events/malevich_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/events/malevich_405w.webp">
+
+                <img src="assets/images/events/malevich_405w.jpg" alt="malevich" class="event-card__img">
               </picture>
 
               <h4 class="event-card__title">Выставка Малевича в Томске</h4>
@@ -107,7 +181,21 @@
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
-                <img src="assets/images/events/tatler.png" alt="tatler" class="event-card__img">
+                <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/tatler_405w.webp">
+
+                <source media="(max-width: 649px)" srcset="assets/images/events/tatler_405w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/tatler_339w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/events/tatler_339w.jpg">
+
+                <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/tatler_393w.webp">
+
+                <source media="(max-width: 1659px)" srcset="assets/images/events/tatler_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/events/tatler_405w.webp">
+
+                <img src="assets/images/events/tatler_405w.jpg" alt="tatler" class="event-card__img">
               </picture>
 
               <h4 class="event-card__title">Мастер-класс по студийной съемке от Tatler</h4>
@@ -120,7 +208,21 @@
           <article class="event-card listing__event-card">
             <a href="event.html" class="event-card__link">
               <picture class="event-card__picture">
-                <img src="assets/images/events/hatters.png" alt="hatters" class="event-card__img">
+                <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/hatters_405w.webp">
+
+                <source media="(max-width: 649px)" srcset="assets/images/events/hatters_405w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/hatters_339w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/events/hatters_339w.jpg">
+
+                <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/hatters_393w.webp">
+
+                <source media="(max-width: 1659px)" srcset="assets/images/events/hatters_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/events/hatters_405w.webp">
+
+                <img src="assets/images/events/hatters_405w.jpg" alt="hatters" class="event-card__img">
               </picture>
 
               <h4 class="event-card__title">Повеселимся на славу на концерте The Hatters</h4>
@@ -132,11 +234,11 @@
           </article>
         </div>
 
-        <div class="events__arrow-link arrow-link arrow-link--vertical">
+        <div class="arrow-link events__arrow-link arrow-link--vertical">
           <a href="#" class="arrow-link__link link">Показать еще</a>
 
           <a href="#" class="arrow-link__arrow arrow">
-            <svg class="arrow__icon" width="91" height="91">
+            <svg class="arrow__icon" width="91" height="60">
               <use xlink:href="assets/icons/symbols.svg#arrow"></use>
             </svg>
           </a>
@@ -257,7 +359,7 @@
         <h2 class="offers__title">Я хочу:</h2>
 
         <div class="offers__btns">
-          <button type="button" class="offers__event-btn btn">Провести мероприятие</button>
+          <button type="button" class="offers__event-btn btn" id="js-openEventBtn">Провести мероприятие</button>
           <button type="button" class="offers__rent-btn btn">Стать арендатором</button>
         </div>
       </section>
@@ -393,10 +495,10 @@
     </div>
   </footer>
 
-  <div class="pp" id="eventPP">
+  <div class="pp" id="js-eventPP">
     <div class="pp__wrapper">
       <div class="pp__sticky-close">
-        <button type="button" class="pp__x-btn x-btn">
+        <button type="button" class="pp__x-btn x-btn js-ppCloseBtn">
           <svg class="x-btn__icon" width="24" height="24">
             <use xlink:href="assets/icons/symbols.svg#x"></use>
           </svg>
@@ -506,7 +608,7 @@
 
               <div class="form__btns">
                 <button type="submit" class="form__submit-btn btn">Отправить</button>
-                <button type="button" class="form__close-btn btn">Закрыть</button>
+                <button type="button" class="form__close-btn btn js-ppCloseBtn">Закрыть</button>
               </div>
             </div>
           </div>

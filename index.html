@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Lenni Art</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.min.css?ver=0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +24,27 @@
         <a href="#" class="page-header__nav-link">Блог</a>
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
+
+        <div class="page-header__nav-user">
+          <a href="#" class="page-header__nav-user-link">Александр С.</a>
+
+          <a href="#" class="page-header__nav-logout">
+            <svg class="page-header__nav-logout-icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#logout"></use>
+            </svg>
+          </a>
+        </div>
+
       </nav>
 
       <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn">Войти</a>
+        <a href="#" class="page-header__user-btn">Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
+
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
       </div>
     </div>
   </header>
@@ -48,7 +66,7 @@
         <h2 class="offers__title">Я хочу:</h2>
 
         <div class="offers__btns">
-          <button type="button" class="offers__event-btn btn">Провести мероприятие</button>
+          <button type="button" class="offers__event-btn btn" id="js-openEventBtn">Провести мероприятие</button>
           <button type="button" class="offers__rent-btn btn">Стать арендатором</button>
         </div>
       </section>
@@ -69,13 +87,45 @@
           <div class="about__second-block">
             <div class="about__first-picture-area">
               <picture class="about__first-picture">
-                <img class="about__img" src="assets/images/about1.jpg" alt="about1">
+                <source media="(max-width: 767px)" type="image/webp" srcset="assets/images/about1_708w.webp">
+
+                <source media="(max-width: 767px)" srcset="assets/images/about1_708w.jpg">
+
+                <source media="(max-width: 949px)" type="image/webp" srcset="assets/images/about1_870w.webp">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/about1_708w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/about1_708w.jpg">
+
+                <source media="(max-width: 1339px)" type="image/webp" srcset="assets/images/about1_826w.webp">
+
+                <source media="(max-width: 1339px)" srcset="assets/images/about1_826w.jpg">
+
+                <source type="image/webp" srcset="assets/images/about1_870w.webp">
+
+                <img class="about__img" src="assets/images/about1_870w.jpg" alt="about1">
               </picture>
             </div>
 
             <div class="about__second-picture-area">
               <picture class="about__second-picture">
-                <img class="about__img" src="assets/images/about2.jpg" alt="about2">
+                <source media="(max-width: 449px)" type="image/webp" srcset="assets/images/about2_262w.webp">
+
+                <source media="(max-width: 449px)" srcset="assets/images/about2_262w.jpg">
+
+                <source media="(max-width: 719px)" type="image/webp" srcset="assets/images/about2_404w.webp">
+
+                <source media="(max-width: 799px)" type="image/webp" srcset="assets/images/about2_262w.webp">
+
+                <source media="(max-width: 799px)" srcset="assets/images/about2_262w.jpg">
+
+                <source media="(max-width: 1339px)" type="image/webp" srcset="assets/images/about2_393w.webp">
+
+                <source media="(max-width: 1339px)" srcset="assets/images/about2_393w.jpg">
+
+                <source type="image/webp" srcset="assets/images/about2_404w.webp">
+
+                <img class="about__img" src="assets/images/about2_404w.jpg" alt="about2">
               </picture>
             </div>
 
@@ -97,7 +147,17 @@
 
           <div class="about__third-block">
             <picture class="about__third-picture">
-              <img class="about__third-img" src="assets/images/about3.jpg" alt="about3">
+              <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/about3_672w.webp">
+
+              <source media="(max-width: 1169px)" srcset="assets/images/about3_672w.jpg">
+
+              <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/about3_821w.webp">
+
+              <source media="(max-width: 1659px)" srcset="assets/images/about3_821w.jpg">
+
+              <source type="image/webp" srcset="assets/images/about3_872w.webp">
+
+              <img class="about__third-img" src="assets/images/about3_872w.jpg" alt="about3">
             </picture>
 
             <div class="about__third-block-wrapper">
@@ -106,7 +166,7 @@
                 это было классно.
               </p>
 
-              <div class="about__arrow-link arrow-link">
+              <div class="arrow-link about__arrow-link ">
                 <a href="#" class="arrow-link__link link">Смотреть</a>
 
                 <a href="#" class="arrow-link__arrow arrow">
@@ -120,125 +180,241 @@
         </div>
       </section>
 
-      <div class="home__events-listing">
-        <section class="listing events__listing">
-          <h2 class="listing__title section-title">Мероприятия</h2>
+      <section class="upcoming home__upcoming">
+        <div class="upcoming__wrapper" id="js-upcoming-wrapper">
+          <div class="upcoming__container">
+            <h2 class="upcoming__title section-title">Мероприятия</h2>
 
-          <div class="listing__events-list ">
-            <article class="event-card listing__event-card">
-              <a href="event.html" class="event-card__link">
-                <picture class="event-card__picture">
-                  <img src="assets/images/events/nirvana.png" alt="nirvana" class="event-card__img">
-                </picture>
+            <div class="upcoming__swiper swiper swiper--3s js-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- prettier-ignore -->
+                  <article class="event-card ">
+                    <a href="event.html" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/nirvana_405w.webp">
 
-                <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana. Nirvana</h4>
+                        <source media="(max-width: 649px)" srcset="assets/images/events/nirvana_405w.jpg">
 
-                <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.</p>
+                        <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/nirvana_339w.webp">
 
-                <time datetime="2022-12-07T18:00" class="event-card__time">07.12.2022 | начало 18.00</time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="event.html" class="event-card__link">
-                <picture class="event-card__picture">
-                  <img src="assets/images/events/stuff.png" alt="stuff" class="event-card__img">
-                </picture>
+                        <source media="(max-width: 1169px)" srcset="assets/images/events/nirvana_339w.jpg">
 
-                <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>
+                        <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/nirvana_393w.webp">
 
-                <p class="event-card__description">Один из самых популярных подкастов в мире. В нем авторы объясняют, как устроены разные вещи.</p>
+                        <source media="(max-width: 1659px)" srcset="assets/images/events/nirvana_393w.jpg">
 
-                <time datetime="2022-12-14T18:30" class="event-card__time">14.12.2022 | начало 18.30</time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="event.html" class="event-card__link">
-                <picture class="event-card__picture">
-                  <img src="assets/images/events/sade.png" alt="sade" class="event-card__img">
-                </picture>
+                        <source type="image/webp" srcset="assets/images/events/nirvana_405w.webp">
 
-                <h4 class="event-card__title">Вечер | The Best of Sade</h4>
+                        <img src="assets/images/events/nirvana_405w.jpg" alt="nirvana" class="event-card__img">
+                      </picture>
 
-                <p class="event-card__description">Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.</p>
+                      <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana. Nirvana</h4>
 
-                <time datetime="2022-12-16T20:00" class="event-card__time">16.12.2022 | начало 20.00</time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="event.html" class="event-card__link">
-                <picture class="event-card__picture">
-                  <img src="assets/images/events/malevich.png" alt="malevich" class="event-card__img">
-                </picture>
+                      <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.</p>
 
-                <h4 class="event-card__title">Выставка Малевича в Томске</h4>
+                      <time datetime="2022-12-07T18:00" class="event-card__time">07.12.2022 | начало 18.00</time>
+                    </a>
+                  </article>
+                </div>
 
-                <p class="event-card__description">Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займет два этажа павильона.</p>
+                <div class="swiper-slide">
+                  <!-- prettier-ignore -->
+                  <article class="event-card ">
+                    <a href="event.html" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/stuff_405w.webp">
 
-                <time datetime="2022-12-16T20:00" class="event-card__time">16.12.2022 | начало 20.00</time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="event.html" class="event-card__link">
-                <picture class="event-card__picture">
-                  <img src="assets/images/events/tatler.png" alt="tatler" class="event-card__img">
-                </picture>
+                        <source media="(max-width: 649px)" srcset="assets/images/events/stuff_405w.jpg">
 
-                <h4 class="event-card__title">Мастер-класс по студийной съемке от Tatler</h4>
+                        <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/stuff_339w.webp">
 
-                <p class="event-card__description">Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.</p>
+                        <source media="(max-width: 1169px)" srcset="assets/images/events/stuff_339w.jpg">
 
-                <time datetime="2022-12-25T13:00" class="event-card__time">25.12.2022 | начало 13.00</time>
-              </a>
-            </article>
-            <article class="event-card listing__event-card">
-              <a href="event.html" class="event-card__link">
-                <picture class="event-card__picture">
-                  <img src="assets/images/events/hatters.png" alt="hatters" class="event-card__img">
-                </picture>
+                        <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/stuff_393w.webp">
 
-                <h4 class="event-card__title">Повеселимся на славу на концерте The Hatters</h4>
+                        <source media="(max-width: 1659px)" srcset="assets/images/events/stuff_393w.jpg">
 
-                <p class="event-card__description">Российская джипси-фолк-рок-группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко</p>
+                        <source type="image/webp" srcset="assets/images/events/stuff_405w.webp">
 
-                <time datetime="2022-12-27T10:00" class="event-card__time">27.12.2022 | начало 10.00</time>
-              </a>
-            </article>
-          </div>
+                        <img src="assets/images/events/stuff_405w.jpg" alt="stuff" class="event-card__img">
+                      </picture>
 
-          <div class="slider listing__slider">
-            <button type="button" title="left-arrow" class="slider__arrow arrow arrow--180deg">
-              <svg class="arrow__icon" width="91" height="60">
-                <use xlink:href="assets/icons/symbols.svg#arrow"></use>
-              </svg>
-            </button>
+                      <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>
 
-            <div class="slider__items">
-              <div class="slider__item"></div>
-              <div class="slider__item"></div>
-              <div class="slider__item slider__item--active"></div>
-              <div class="slider__item"></div>
-              <div class="slider__item"></div>
+                      <p class="event-card__description">Один из самых популярных подкастов в мире. В нем авторы объясняют, как устроены разные вещи.</p>
+
+                      <time datetime="2022-12-14T18:30" class="event-card__time">14.12.2022 | начало 18.30</time>
+                    </a>
+                  </article>
+                </div>
+
+                <div class="swiper-slide">
+                  <!-- prettier-ignore -->
+                  <article class="event-card ">
+                    <a href="event.html" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/sade_405w.webp">
+
+                        <source media="(max-width: 649px)" srcset="assets/images/events/sade_405w.jpg">
+
+                        <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/sade_339w.webp">
+
+                        <source media="(max-width: 1169px)" srcset="assets/images/events/sade_339w.jpg">
+
+                        <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/sade_393w.webp">
+
+                        <source media="(max-width: 1659px)" srcset="assets/images/events/sade_393w.jpg">
+
+                        <source type="image/webp" srcset="assets/images/events/sade_405w.webp">
+
+                        <img src="assets/images/events/sade_405w.jpg" alt="sade" class="event-card__img">
+                      </picture>
+
+                      <h4 class="event-card__title">Вечер | The Best of Sade</h4>
+
+                      <p class="event-card__description">Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.</p>
+
+                      <time datetime="2022-12-16T20:00" class="event-card__time">16.12.2022 | начало 20.00</time>
+                    </a>
+                  </article>
+                </div>
+
+                <div class="swiper-slide">
+                  <!-- prettier-ignore -->
+                  <article class="event-card ">
+                    <a href="event.html" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/malevich_405w.webp">
+
+                        <source media="(max-width: 649px)" srcset="assets/images/events/malevich_405w.jpg">
+
+                        <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/malevich_339w.webp">
+
+                        <source media="(max-width: 1169px)" srcset="assets/images/events/malevich_339w.jpg">
+
+                        <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/malevich_393w.webp">
+
+                        <source media="(max-width: 1659px)" srcset="assets/images/events/malevich_393w.jpg">
+
+                        <source type="image/webp" srcset="assets/images/events/malevich_405w.webp">
+
+                        <img src="assets/images/events/malevich_405w.jpg" alt="malevich" class="event-card__img">
+                      </picture>
+
+                      <h4 class="event-card__title">Выставка Малевича в Томске</h4>
+
+                      <p class="event-card__description">Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займет два этажа павильона.</p>
+
+                      <time datetime="2022-12-16T20:00" class="event-card__time">16.12.2022 | начало 20.00</time>
+                    </a>
+                  </article>
+                </div>
+
+                <div class="swiper-slide">
+                  <!-- prettier-ignore -->
+                  <article class="event-card ">
+                    <a href="event.html" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/tatler_405w.webp">
+
+                        <source media="(max-width: 649px)" srcset="assets/images/events/tatler_405w.jpg">
+
+                        <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/tatler_339w.webp">
+
+                        <source media="(max-width: 1169px)" srcset="assets/images/events/tatler_339w.jpg">
+
+                        <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/tatler_393w.webp">
+
+                        <source media="(max-width: 1659px)" srcset="assets/images/events/tatler_393w.jpg">
+
+                        <source type="image/webp" srcset="assets/images/events/tatler_405w.webp">
+
+                        <img src="assets/images/events/tatler_405w.jpg" alt="tatler" class="event-card__img">
+                      </picture>
+
+                      <h4 class="event-card__title">Мастер-класс по студийной съемке от Tatler</h4>
+
+                      <p class="event-card__description">Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.</p>
+
+                      <time datetime="2022-12-25T13:00" class="event-card__time">25.12.2022 | начало 13.00</time>
+                    </a>
+                  </article>
+                </div>
+
+                <div class="swiper-slide">
+                  <!-- prettier-ignore -->
+                  <article class="event-card ">
+                    <a href="event.html" class="event-card__link">
+                      <picture class="event-card__picture">
+                        <source media="(max-width: 649px)" type="image/webp" srcset="assets/images/events/hatters_405w.webp">
+
+                        <source media="(max-width: 649px)" srcset="assets/images/events/hatters_405w.jpg">
+
+                        <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/events/hatters_339w.webp">
+
+                        <source media="(max-width: 1169px)" srcset="assets/images/events/hatters_339w.jpg">
+
+                        <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/events/hatters_393w.webp">
+
+                        <source media="(max-width: 1659px)" srcset="assets/images/events/hatters_393w.jpg">
+
+                        <source type="image/webp" srcset="assets/images/events/hatters_405w.webp">
+
+                        <img src="assets/images/events/hatters_405w.jpg" alt="hatters" class="event-card__img">
+                      </picture>
+
+                      <h4 class="event-card__title">Повеселимся на славу на концерте The Hatters</h4>
+
+                      <p class="event-card__description">Российская джипси-фолк-рок-группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко</p>
+
+                      <time datetime="2022-12-27T10:00" class="event-card__time">27.12.2022 | начало 10.00</time>
+                    </a>
+                  </article>
+                </div>
+              </div>
+
+              <footer class="swiper-footer">
+                <button type="button" class="swiper-arrow-prev arrow arrow--left">
+                  <svg class="arrow__icon" width="91" height="60">
+                    <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                  </svg>
+                </button>
+
+                <div class="swiper-pagination"></div>
+
+                <button type="button" class="swiper-arrow-next arrow">
+                  <svg class="arrow__icon" width="91" height="60">
+                    <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                  </svg>
+                </button>
+              </footer>
             </div>
 
-            <button type="button" title="right-arrow" class="slider__arrow arrow">
-              <svg class="arrow__icon" width="91" height="60">
-                <use xlink:href="assets/icons/symbols.svg#arrow"></use>
-              </svg>
-            </button>
+            <a href="#" class="upcoming__link link">Смотреть все</a>
           </div>
-
-          <a href="#" class="listing__link link">Смотреть все</a>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <section class="listing home__blog-listing">
         <h2 class="listing__title section-title">Блог</h2>
 
         <div class="listing__article-list">
-          <article class="article-card listing__artiсle-card">
+          <!-- prettier-ignore -->
+          <article class="article-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__picture">
-                <img src="assets/images/blog/theatre.png" alt="Theatre Photosession" class="article-card__img">
+                <source media="(max-width: 449px)" type="image/webp" srcset="assets/images/blog/theatre_467w.webp">
+
+                <source media="(max-width: 449px)" srcset="assets/images/blog/theatre_467w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/blog/theatre_708w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/blog/theatre_708w.jpg">
+
+                <source type="image/webp" srcset="assets/images/blog/theatre_467w.webp">
+
+                <img src="assets/images/blog/theatre_467w.jpg" alt="Theatre Photosession" class="article-card__img">
               </picture>
             </a>
 
@@ -258,10 +434,20 @@
               <p class="article-card__description">Организовывая фотосессию для локального бренда одежды, мы смогли воплотить все пожелания заказчика, и у нас получилась отличная работа. Смотрите, как это было.</p>
             </div>
           </article>
-          <article class="article-card listing__artiсle-card">
+          <article class="article-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__picture">
-                <img src="assets/images/blog/vr-exhibition.png" alt="VR Exhibition" class="article-card__img">
+                <source media="(max-width: 449px)" type="image/webp" srcset="assets/images/blog/vr-exhibition_467w.webp">
+
+                <source media="(max-width: 449px)" srcset="assets/images/blog/vr-exhibition_467w.jpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/blog/vr-exhibition_708w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/blog/vr-exhibition_708w.jpg">
+
+                <source type="image/webp" srcset="assets/images/blog/vr-exhibition_467w.webp">
+
+                <img src="assets/images/blog/vr-exhibition_467w.jpg" alt="VR Exhibition" class="article-card__img">
               </picture>
             </a>
 
@@ -281,10 +467,20 @@
               <p class="article-card__description">Клуб виртуальной реальноти - это другие миры, яркие эмоции, новый опыт... Мы предоставляем нашим клиентам лучший игровой VR-опыт в Томске.</p>
             </div>
           </article>
-          <article class="article-card listing__artiсle-card">
+          <article class="article-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__picture">
-                <img src="assets/images/blog/rocking-radio.png" alt="Rocking Radio" class="article-card__img">
+                <source media="(max-width: 449px)" type="image/webp" srcset="assets/images/blog/rocking-radio_467w.webp">
+
+                <source media="(max-width: 449px)" srcset="assets/images/blog/rocking-radio_467wjpg">
+
+                <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/blog/rocking-radio_708w.webp">
+
+                <source media="(max-width: 1169px)" srcset="assets/images/blog/rocking-radio_708w.jpg">
+
+                <source type="image/webp" srcset="assets/images/blog/rocking-radio_467w.webp">
+
+                <img src="assets/images/blog/rocking-radio_467wjpg" alt="Rocking Radio" class="article-card__img">
               </picture>
             </a>
 
@@ -363,11 +559,7 @@
                 </div>
               </div>
             </div>
-            <div class="info__map">
-              <picture class="info__picture">
-                <img src="assets/images/map.jpg" alt="map" class="info__img">
-              </picture>
-            </div>
+            <div class="info__map" id="js-contactsMap"></div>
           </div>
         </div>
       </section>
@@ -452,10 +644,10 @@
     </div>
   </footer>
 
-  <div class="pp" id="eventPP">
+  <div class="pp" id="js-eventPP">
     <div class="pp__wrapper">
       <div class="pp__sticky-close">
-        <button type="button" class="pp__x-btn x-btn">
+        <button type="button" class="pp__x-btn x-btn js-ppCloseBtn">
           <svg class="x-btn__icon" width="24" height="24">
             <use xlink:href="assets/icons/symbols.svg#x"></use>
           </svg>
@@ -565,7 +757,7 @@
 
               <div class="form__btns">
                 <button type="submit" class="form__submit-btn btn">Отправить</button>
-                <button type="button" class="form__close-btn btn">Закрыть</button>
+                <button type="button" class="form__close-btn btn js-ppCloseBtn">Закрыть</button>
               </div>
             </div>
           </div>
@@ -573,6 +765,10 @@
       </div>
     </div>
   </div>
+
+  <script src="https://api-maps.yandex.ru/v3/?apikey=664ae998-4da0-4bbe-9d13-109fe362cc4e&lang=ru_RU"></script>
+  <script src="scripts/swiper.min.js"></script>
+  <script src="scripts/main.min.js"></script>
 </body>
 
 </html>
