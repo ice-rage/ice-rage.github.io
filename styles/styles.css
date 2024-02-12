@@ -1142,13 +1142,13 @@ button {
   z-index: 10;
 }
 .selectric-wrapper::before {
-  right: 28px;
+  right: 29px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 .selectric-wrapper::after {
-  right: 24px;
+  right: 23px;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -2335,7 +2335,6 @@ button.swiper-pagination-bullet {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: 23px;
-  margin-bottom: 9px;
   padding-left: 23px;
   cursor: pointer;
 }
@@ -2818,6 +2817,9 @@ button.swiper-pagination-bullet {
 .field__title--mb7 {
   margin-bottom: 7px;
 }
+.field__radio {
+  gap: 15px;
+}
 .field__select-wrapper {
   position: relative;
 }
@@ -2870,7 +2872,7 @@ button.swiper-pagination-bullet {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 250px;
+  max-width: 251px;
 }
 .field__date-inputs {
   position: absolute;
@@ -2925,7 +2927,7 @@ button.swiper-pagination-bullet {
   font-size: 18px;
 }
 .field__textarea {
-  height: 150px;
+  height: 149px;
 }
 .form__list {
   display: -webkit-box;
@@ -2935,6 +2937,7 @@ button.swiper-pagination-bullet {
       flex-wrap: wrap;
   gap: 30px 60px;
   width: 100%;
+  max-height: 849px;
 }
 .form__list--mb50 {
   margin-bottom: 50px;
@@ -2951,6 +2954,10 @@ button.swiper-pagination-bullet {
 }
 .form__group {
   width: calc(50% - 30px);
+}
+.form__section {
+  display: block;
+  width: 100%;
 }
 .form__check--mb40 {
   margin-bottom: 40px;
@@ -2973,7 +2980,8 @@ button.swiper-pagination-bullet {
 }
 .form__submit-btn {
   width: 100%;
-  max-width: 400px;
+  max-width: 401px;
+  max-height: 52px;
   padding: 15px 156px;
 }
 .form__close-btn {
@@ -3895,6 +3903,8 @@ button.swiper-pagination-bullet {
 }
 .pp__x-btn {
   position: absolute;
+  width: 60px;
+  height: 60px;
   top: -30px;
   right: -30px;
 }
@@ -4532,6 +4542,12 @@ button.swiper-pagination-bullet {
   .page-footer__right-block {
     max-width: 388px;
   }
+  .pp__wrapper {
+    max-width: 1144px;
+  }
+  .pp__title {
+    margin-left: -52px;
+  }
   .about__text--mt50 {
     max-width: 65.635%;
   }
@@ -4665,6 +4681,26 @@ button.swiper-pagination-bullet {
   .article-card + .article-card {
     margin-top: 100px;
   }
+  .field__label--textarea {
+    margin-bottom: 12px;
+  }
+  .form__list {
+    gap: 3.906vw;
+    max-height: 1042px;
+  }
+  .form__field--w50 {
+    width: calc(50% - 1.953vw);
+  }
+  .form__group {
+    width: calc(50% - 1.953vw);
+  }
+  .form__btns {
+    gap: 15.104vw;
+  }
+  .form__submit-btn {
+    width: 37.63vw;
+    padding: 15px 100px;
+  }
   .info__container {
     padding-left: 30px;
     padding-right: 30px;
@@ -4703,6 +4739,20 @@ button.swiper-pagination-bullet {
   .page-footer__container {
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .pp {
+    padding: 72px 40px 50px;
+  }
+  .pp__wrapper {
+    max-width: 89.5833vw;
+  }
+  .pp__x-btn {
+    right: -2px;
+  }
+  .pp__title {
+    max-width: 495px;
+    margin-left: -27px;
+    padding: 10px 60px 10px 18px;
   }
   .about__container {
     padding-left: 30px;
@@ -5096,6 +5146,9 @@ button.swiper-pagination-bullet {
     padding: 11px 19px;
     font-size: 20px;
   }
+  .check__label--fsz14 {
+    padding-top: 3px;
+  }
   .check__label--fw300 {
     font-weight: 400;
     font-size: 12px;
@@ -5184,6 +5237,57 @@ button.swiper-pagination-bullet {
   .article-card__description {
     font-size: 14px;
   }
+  .field__label--textarea {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .field__input {
+    margin-bottom: 30px;
+  }
+  .field__textarea {
+    height: 234px;
+  }
+  .form__list--mb50 {
+    margin-bottom: 20px;
+  }
+  .form__list {
+    gap: 0;
+    max-height: 1683px;
+  }
+  .form__field--w50 {
+    width: 100%;
+    font-weight: 400;
+  }
+  .form__group {
+    width: 100%;
+    margin: 53px 0 30px 0;
+  }
+  .form__group .field__title {
+    font-size: 16px;
+  }
+  .form__section .field__title,
+  .form__section .field__label--textarea {
+    font-size: 16px;
+  }
+  .form__btns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+  .form__submit-btn,
+  .form__close-btn {
+    font-size: 14px;
+  }
+  .form__submit-btn {
+    width: 100%;
+    max-height: 49px;
+    padding: 15px 81px;
+  }
+  .form__close-btn {
+    padding: 5px 40px;
+  }
   .info__container {
     padding-left: 20px;
     padding-right: 20px;
@@ -5252,6 +5356,30 @@ button.swiper-pagination-bullet {
   .page-footer__cookies {
     -ms-flex-item-align: center;
         align-self: center;
+  }
+  .pp {
+    padding: 80px 20px 50px;
+  }
+  .pp__x-btn {
+    width: 36px;
+    height: 36px;
+    top: -18px;
+    right: -18px;
+  }
+  .pp__x-btn .x-btn__icon {
+    width: 21px;
+    height: 21px;
+  }
+  .pp__container {
+    padding: 0 20px 40px;
+  }
+  .pp__title {
+    max-width: 225px;
+    min-height: 77px;
+    margin: -30px 0 40px -6px;
+    padding: 9px 22px 11px 20px;
+    font-size: 14px;
+    line-height: 1.357;
   }
   .about__container {
     padding-left: 20px;
@@ -5491,14 +5619,6 @@ button.swiper-pagination-bullet {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 40px;
-  }
-}
-@media (max-width: 499px) {
-  .selectric-wrapper::before {
-    right: 17px;
-  }
-  .selectric-wrapper::after {
-    right: 12px;
   }
 }
 @media (max-width: 449px) {
