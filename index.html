@@ -54,6 +54,8 @@
       <header class="main-header home__main-header">
         <h1 class="main-header__title">Арт — пространство</h1>
         <picture class="main-header__picture">
+          <source type="image/webp" srcset="assets/images/LENNI.webp">
+
           <img src="assets/images/LENNI.png" alt="lenni" class="main-header__img">
         </picture>
         <p class="main-header__text">
@@ -113,6 +115,10 @@
 
                 <source media="(max-width: 449px)" srcset="assets/images/about2_262w.jpg">
 
+                <source media="(max-width: 599px)" type="image/webp" srcset="assets/images/about2_393w.webp">
+
+                <source media="(max-width: 599px)" srcset="assets/images/about2_393w.jpg">
+
                 <source media="(max-width: 719px)" type="image/webp" srcset="assets/images/about2_404w.webp">
 
                 <source media="(max-width: 799px)" type="image/webp" srcset="assets/images/about2_262w.webp">
@@ -147,13 +153,19 @@
 
           <div class="about__third-block">
             <picture class="about__third-picture">
+              <source media="(max-width: 767px)" type="image/webp" srcset="assets/images/about3_672w.webp">
+
+              <source media="(max-width: 767px)" srcset="assets/images/about3_672w.jpg">
+
+              <source media="(max-width: 959px)" type="image/webp" srcset="assets/images/about3_872w.webp">
+
               <source media="(max-width: 1169px)" type="image/webp" srcset="assets/images/about3_672w.webp">
 
               <source media="(max-width: 1169px)" srcset="assets/images/about3_672w.jpg">
 
-              <source media="(max-width: 1659px)" type="image/webp" srcset="assets/images/about3_821w.webp">
+              <source media="(max-width: 1339px)" type="image/webp" srcset="assets/images/about3_821w.webp">
 
-              <source media="(max-width: 1659px)" srcset="assets/images/about3_821w.jpg">
+              <source media="(max-width: 1339px)" srcset="assets/images/about3_821w.jpg">
 
               <source type="image/webp" srcset="assets/images/about3_872w.webp">
 
@@ -500,9 +512,9 @@
               <p class="article-card__description">15 электрогенераторов, километры проводов и пара тонн света. Все это для того, чтобы организовать лучшую вечеринку года для ребят из Новосибирска.</p>
             </div>
           </article>
-        </div>
 
-        <a href="#" class="listing__link link">Смотреть все</a>
+          <a href="#" class="listing__link link">Смотреть все</a>
+        </div>
       </section>
 
       <section class="info home__contacts">
@@ -559,17 +571,19 @@
                 </div>
               </div>
             </div>
-            <div class="info-map info__map" id="js-infoMap"></div>
+            <div class="info-map info__map">
+              <div class="info-map__wrapper">
+                <div class="info-map__content" id="js-infoMap"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <div class="quote home__quote">
-        <div class="quote__content">
-          <p>Просто делайте, что нравится,
-            <br>а мы вам поможем
-          </p>
-        </div>
+        <span class="quote__first-part">Просто делайте,</span>
+        <span class="quote__second-part">что нравится,</span>
+        <span class="quote__third-part">а мы вам поможем</span>
       </div>
     </div>
   </main>
@@ -778,7 +792,7 @@
   <script src="scripts/air-datepicker.js"></script>
   <script src="scripts/swiper.min.js"></script>
 
-  <script src="scripts/main.min.js"></script>
+  <script type="module" src="scripts/main.min.js"></script>
 </body>
 
 </html>
