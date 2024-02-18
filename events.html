@@ -238,7 +238,7 @@
           <a href="#" class="arrow-link__link link">Показать еще</a>
 
           <a href="#" class="arrow-link__arrow arrow">
-            <svg class="arrow__icon" width="91" height="60">
+            <svg class="arrow__icon">
               <use xlink:href="assets/icons/symbols.svg#arrow"></use>
             </svg>
           </a>
@@ -253,7 +253,7 @@
           начинается сложная, но интересная работа, результатом которой будет проведение вашего
           мероприятия на высшем уровне.
         </p>
-        <table class="events__rates-table table">
+        <table class="events__price-table table" id="js-priceTable">
           <thead class="table__head">
             <tr class="table__head-tr">
               <th class="table__th"></th>
@@ -267,7 +267,7 @@
               <th class="table__body-th">Стоимость за час</th>
               <td class="table__td">1 000</td>
               <td class="table__td">3 000</td>
-              <td class="table__td">от 6 000 ₽</td>
+              <td class="table__td">от 6 000</td>
             </tr>
             <tr class="table__tr">
               <th class="table__body-th">Ведущий мероприятия</th>
@@ -310,7 +310,7 @@
               </td>
             </tr>
             <tr class="table__tr">
-              <th class="table__body-th">Ведущий мероприятия</th>
+              <th class="table__body-th">Декор</th>
               <td class="table__td"></td>
               <td class="table__td"></td>
               <td class="table__td">
@@ -412,7 +412,7 @@
               <div class="info-item__content">
 
                 <h4 class="info-item__title">Преимущество</h4>
-                <p>
+                <p class="info-item__data">
                   Мы имеем все возможности для того, чтобы помочь как малому бизнесу и молодым
                   талантам, так и большим корпорациям и холдингам.
                 </p>
@@ -619,6 +619,9 @@
       </div>
     </div>
   </div>
+
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/price-table.min.js"></script>
 </body>
 
 </html>
