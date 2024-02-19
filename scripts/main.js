@@ -3,72 +3,14 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
 (function () {
   "use strict";
 
-  /* Переключение навигации */
   const root = document.documentElement;
 
+  /* Переключение навигации */
   const navToggle = document.querySelector("#js-navToggle");
 
   navToggle.addEventListener("click", function () {
     root.classList.toggle("show-nav");
   });
-
-  /* Открытие/закрытие формы заявки */
-  const eventPP = document.querySelector("#js-eventPP");
-  const eventOpenBtn = document.querySelector("#js-openEventBtn");
-
-  if (eventPP && eventOpenBtn) {
-    const closeEventPP = function (event) {
-      function close() {
-        document.removeEventListener("keyup", closeEventPP);
-        eventPP.removeEventListener("click", closeEventPP);
-
-        root.classList.remove("show-event-popup");
-      }
-
-      switch (event.type) {
-        case "keyup":
-          if (event.key === "Escape" || event.keyCode === 27) close();
-          break;
-        case "click":
-          if (
-            event.target === this ||
-            event.target.classList.contains("js-ppCloseBtn")
-          )
-            close();
-          break;
-      }
-    };
-
-    eventOpenBtn.addEventListener("click", function () {
-      root.classList.add("show-event-popup");
-
-      document.addEventListener("keyup", closeEventPP);
-      eventPP.addEventListener("click", closeEventPP);
-    });
-
-    /* Анимация слайдеров */
-    const swipers = document.querySelectorAll(".js-swiper");
-
-    swipers.forEach(function (swiper) {
-      new Swiper(swiper, {
-        updateOnWindowResize: true,
-        slidesPerView: "auto",
-        freeMode: true,
-        spaceBetween: 0,
-        speed: 500,
-        grabCursor: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-arrow-next",
-          prevEl: ".swiper-arrow-prev",
-          disabledClass: "arrow--disabled",
-        },
-      });
-    });
-  }
 
   /* Проверка загрузки фонового изображения для листинга событий на главной странице */
   const upcomingWrapper = document.querySelector("#js-upcoming-wrapper");
@@ -82,6 +24,29 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
 
   img.addEventListener("error", function () {
     upcomingWrapper.setAttribute("style", "background-color: white");
+  });
+
+  /* Анимация слайдеров */
+  const swipers = document.querySelectorAll(".js-swiper");
+
+  swipers.forEach(function (swiper) {
+    new Swiper(swiper, {
+      updateOnWindowResize: true,
+      slidesPerView: "auto",
+      freeMode: true,
+      spaceBetween: 0,
+      speed: 500,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-arrow-next",
+        prevEl: ".swiper-arrow-prev",
+        disabledClass: "arrow--disabled",
+      },
+    });
   });
 
   /* Инициализация карты */
@@ -173,54 +138,5 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
         new YMapMarker({ coordinates: [84.96274, 56.49385] }, placemark)
       );
     }
-  }
-
-  /* Кастомизируем селект для выбора кол-ва посетителей мероприятия */
-  const jsSelectric = $(".js-selectric");
-
-  if (jsSelectric.length) {
-    jsSelectric.selectric({
-      nativeOnMobile: false
-    });
-  }
-
-  /* Задаем маску полю для ввода номера телефона */
-  const mobileMask = $(".js-mobileMask");
-
-  if (mobileMask.length) {
-    mobileMask.mask("+7 (000) 000 00 00", {
-      placeholder: "+7 (___) ___ __ __",
-    });
-  }
-
-  /* Инициализируем календарь для выбора даты проведения мероприятия */
-  const dateField = $(".js-dateField");
-
-  if (dateField.length) {
-    const initDatePicker = function (datePicker) {
-      const dateInput = datePicker.find(".js-dateInput");
-      const dateDay = datePicker.find(".js-dateDay");
-      const dateMonth = datePicker.find(".js-dateMonth");
-      const dateYear = datePicker.find(".js-dateYear");
-
-      const dateConfig = {
-        autoClose: true,
-        minDate: new Date(),
-        navTitles: {
-          days: "MMMM <i>yyyy</i>"
-        },
-        onSelect: function ({ date }) {
-          dateDay.val(date ? ("0" + date.getDate()).slice(-2) : "");
-          dateMonth.val(date ? ("0" + (date.getMonth() + 1)).slice(-2) : "");
-          dateYear.val(date ? date.getFullYear() : "");
-        }
-      };
-
-      new AirDatepicker(dateInput[0], dateConfig);
-    };
-
-    $.each(dateField, function () {
-      initDatePicker($(this));
-    })
   }
 })();
