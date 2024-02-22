@@ -4,11 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Lenni Art</title>
+  <meta name="description" content="Арт—пространство для людей, горящих сердцем и делом">
+  <meta name="keywords" content="Lenni Art, пространство, мероприятия">
+
+  <meta property="og:title" content="Lenni Art">
+  <meta property="og:description" content="Арт пространство для людей, горящих сердцем и делом">
+  <meta property="og:image" content="/assets/images/lenni.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lenni-art.ru/">
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/assets/icons/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="shortcut icon" href="/assets/icons/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicons/favicon-32x32.png">
+
+  <link rel="mask-icon" href="/assets/icons/favicons/safari-pinned-tab.svg" color="#bc3324">
+
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicons/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicons/android-chrome-192x192.png">
+  <link rel="manifest" href="/assets/icons/favicons/site.webmanifest">
+
   <link rel="stylesheet" type="text/css" href="styles/styles.min.css?ver=0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script defer src="scripts/jquery.validate.min.js"></script>
+  <script defer src="scripts/jquery.validate-init.js"></script>
+  <script src="scripts/toastr.min.js"></script>
 </head>
 
 <body class="body">
@@ -54,9 +89,9 @@
       <header class="main-header home__main-header">
         <h1 class="main-header__title">Арт — пространство</h1>
         <picture class="main-header__picture">
-          <source type="image/webp" srcset="assets/images/LENNI.webp">
+          <source type="image/webp" srcset="assets/images/lenni.webp">
 
-          <img src="assets/images/LENNI.png" alt="lenni" class="main-header__img">
+          <img src="assets/images/lenni.png" alt="lenni" class="main-header__img">
         </picture>
         <p class="main-header__text">
           Для людей, горящих сердцем и делом
@@ -616,13 +651,13 @@
         </div>
 
         <div class="page-footer__center-block">
-          <a href="#" class="page-footer__sn-link">
+          <a href="#" target="_blank" rel="nofollow norefferer noopener" class="page-footer__sn-link">
             <svg class="page-footer__sn-icon" width="58" height="58">
               <use xlink:href="assets/icons/symbols.svg#instagram"></use>
             </svg>
           </a>
 
-          <a href="#" class="page-footer__sn-link">
+          <a href="#" target="_blank" class="page-footer__sn-link">
             <svg class="page-footer__sn-icon" width="58" height="58">
               <use xlink:href="assets/icons/symbols.svg#vkontakte"></use>
             </svg>
@@ -630,26 +665,29 @@
         </div>
 
         <div class="page-footer__right-block">
-          <form class="page-footer__subscription-form subscription-form">
+          <form action="https://jsonplaceholder.typicode.com/posts" class="page-footer__subscription-form subscription-form" id="js-subscriptionForm">
             <h4 class="subscription-form__title">Подпишись и будь в курсе происходящего</h4>
 
             <div class="subscription-form__wrapper">
-              <input type="email" name="email" placeholder="E-mail" class="subscription-form__input" required>
+              <div class="subscription-form__input-wrapper">
+                <input type="email" name="email" placeholder="E-mail" class="subscription-form__input" id="#js-subscriptionEmail" required>
+              </div>
+
               <button type="submit" class="subscription-form__submit">Подписаться</button>
             </div>
 
             <label class="subscription-form__check check">
-              <input type="checkbox" class="check__input" name="agreement" required checked>
-              <span class="check__mark"></span>
               <span class="check__label check__label--fsz14 check__label--fw300">
                 Согласен на обработку персональных данных
               </span>
+              <input type="checkbox" class="check__input" name="agreement" required checked>
+              <span class="check__mark"></span>
             </label>
           </form>
 
           <div class="page-footer__creator">
             <span class="page-footer__creator-label">Создание и продвижение</span>
-            <a href="https://tagree.ru/" target="_blank" class="page-footer__creator-link">
+            <a href="https://tagree.ru/" target="_blank" rel="nofollow norefferer noopener" class="page-footer__creator-link">
               <img src="assets/images/tagree.png" alt="tagree" class="page-footer__creator-img">
             </a>
           </div>
@@ -673,7 +711,7 @@
           <br> и мы подберем площадку
         </h2>
 
-        <form class="pp__form form">
+        <form class="pp__form form" id="js-eventForm">
           <div class="form__list">
             <div class="form__field form__field--w50 field">
               <h5 class="field__title">Формат мероприятия:</h5>
@@ -709,14 +747,12 @@
               <div class="form__field form__field--mb30 field">
                 <h5 class="field__title">Планируемое количество посетителей:</h5>
 
-                <div class="field__select-wrapper">
-                  <select name="amount" class="field__select js-selectric">
-                    <option value="20">до 20 человек</option>
-                    <option value="100">от 20 до 100 человек</option>
-                    <option value="500">от 100 до 500 человек</option>
-                    <option value="1000">более 500 человек</option>
-                  </select>
-                </div>
+                <select name="amount" class="field__select js-selectric">
+                  <option value="20">до 20 человек</option>
+                  <option value="100">от 20 до 100 человек</option>
+                  <option value="500">от 100 до 500 человек</option>
+                  <option value="1000">более 500 человек</option>
+                </select>
               </div>
 
               <div class="form__field field js-dateField">
@@ -765,11 +801,11 @@
               </label>
 
               <label class="form__check form__check--mb40 check">
-                <input type="checkbox" class="check__input" name="agreement" required checked>
-                <span class="check__mark"></span>
                 <span class="check__label check__label--fsz14">
                   Я соглашаюсь с пользовательским соглашением и политикой использования персональных данных
                 </span>
+                <input type="checkbox" class="check__input" name="agreement" required checked>
+                <span class="check__mark"></span>
               </label>
 
               <div class="form__btns">
@@ -785,14 +821,13 @@
 
   <script src="https://api-maps.yandex.ru/v3/?apikey=664ae998-4da0-4bbe-9d13-109fe362cc4e&lang=ru_RU"></script>
 
-  <script src="scripts/jquery-3.7.1.min.js"></script>
   <script src="scripts/jquery.selectric.min.js"></script>
   <script src="scripts/jquery.mask.min.js"></script>
 
   <script src="scripts/air-datepicker.js"></script>
   <script src="scripts/swiper.min.js"></script>
 
-  <script src="scripts/event-pp.min.js"></script>
+  <script src="scripts/event-pp-handle.min.js"></script>
   <script type="module" src="scripts/main.min.js"></script>
 </body>
 

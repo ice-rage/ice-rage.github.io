@@ -8,6 +8,7 @@
   const eventOpenBtn = document.querySelector("#js-openEventBtn");
 
   if (eventPP && eventOpenBtn) {
+
     const closeEventPP = function (event) {
       function close() {
         document.removeEventListener("keyup", closeEventPP);
@@ -59,6 +60,7 @@
     const dateField = $(".js-dateField");
 
     if (dateField.length) {
+      
       const initDatePicker = function (datePicker) {
         const dateInput = datePicker.find(".js-dateInput");
         const dateDay = datePicker.find(".js-dateDay");

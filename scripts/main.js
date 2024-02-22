@@ -30,6 +30,7 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
   const swipers = document.querySelectorAll(".js-swiper");
 
   swipers.forEach(function (swiper) {
+
     new Swiper(swiper, {
       updateOnWindowResize: true,
       slidesPerView: "auto",
@@ -84,6 +85,7 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
     );
 
     if (infoMap) {
+      
       // Добавляем слой для отображения карты (в сером ночном стиле)
       infoMap.addChild(
         new YMapDefaultSchemeLayer({
