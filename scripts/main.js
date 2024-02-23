@@ -3,16 +3,8 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
 (function () {
   "use strict";
 
-  const root = document.documentElement;
-
-  /* Переключение навигации */
-  const navToggle = document.querySelector("#js-navToggle");
-
-  navToggle.addEventListener("click", function () {
-    root.classList.toggle("show-nav");
-  });
-
   /* Проверка загрузки фонового изображения для листинга событий на главной странице */
+
   const upcomingWrapper = document.querySelector("#js-upcoming-wrapper");
 
   const img = new Image();
@@ -27,6 +19,7 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
   });
 
   /* Анимация слайдеров */
+
   const swipers = document.querySelectorAll(".js-swiper");
 
   swipers.forEach(function (swiper) {
@@ -51,6 +44,7 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
   });
 
   /* Инициализация карты */
+  
   initMap();
 
   async function initMap() {
