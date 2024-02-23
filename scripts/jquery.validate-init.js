@@ -55,45 +55,46 @@
   const subscriptionForm = $("#js-subscriptionForm");
 
   if (subscriptionForm.length) {
+
     const subscriptionAction = subscriptionForm.attr("action");
     const subscriptionEmail = subscriptionForm.find("#js-subscriptionEmail");
 
     subscriptionForm.validate({
       errorElement: "span",
-      submitHandler: function (event) {
+      submitHandler: function (form, event) {
         event.preventDefault();
 
-        // $.ajax({
-        //   url: subscriptionAction,
-        //   method: "POST",
-        //   data: {
-        //     email: subscriptionEmail.val()
-        //   },
-        //   success: function () {
-        //     subscriptionEmail.val("");
-        //     subscriptionEmail.trigger("blur");
-        //     toastr.success("Вы успешно подписались на рассылку новостей");
-        //   },
-        //   error: function () {
-        //     toastr.error("Пожалуйста, попробуйте еще раз", "Ошибка");
-        //   }
-        // });
-
-        fetch(subscriptionAction, {
+        $.ajax({
+          url: subscriptionAction,
           method: "POST",
-          body: {
-            email: subscriptionEmail.val(),
+          data: {
+            email: subscriptionEmail.val()
           },
-        })
-          .then(() => {
+          success: function () {
             subscriptionEmail.val("");
             subscriptionEmail.trigger("blur");
             toastr.success("Вы успешно подписались на рассылку новостей");
-          })
-          .catch(() => {
+          },
+          error: function () {
             toastr.error("Пожалуйста, попробуйте еще раз", "Ошибка");
-          });
-      },
+          }
+        });
+
+        // fetch(subscriptionAction, {
+        //   method: "POST",
+        //   body: {
+        //     email: subscriptionEmail.val()
+        //   }
+        // })
+        //   .then(() => {
+        //     subscriptionEmail.val("");
+        //     subscriptionEmail.trigger("blur");
+        //     toastr.success("Вы успешно подписались на рассылку новостей");
+        //   })
+        //   .catch(() => {
+        //     toastr.error("Пожалуйста, попробуйте еще раз", "Ошибка");
+        //   });
+      }
     });
   }
 })();

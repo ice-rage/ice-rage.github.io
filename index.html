@@ -41,24 +41,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="scripts/jquery-3.7.1.min.js"></script>
-  <script defer src="scripts/jquery.validate.min.js"></script>
+  <script src="scripts/jquery-ui.min.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
   <script defer src="scripts/jquery.validate-init.js"></script>
+
   <script src="scripts/toastr.min.js"></script>
+  <script src="scripts/smooth-scroll-to.min.js"></script>
 </head>
 
 <body class="body">
-  <header class="page-header">
+  <header class="page-header" id="js-pageHeader">
     <div class="page-header__container">
       <a href="/" class="page-header__logo">
         <svg class="page-header__logo-icon" width="202" height="147">
           <use xlink:href="assets/icons/symbols.svg#logo"></use>
         </svg>
       </a>
-      <nav class="page-header__nav">
-        <a href="events.html" class="page-header__nav-link">Мероприятия</a>
-        <a href="#" class="page-header__nav-link">Блог</a>
-        <a href="#" class="page-header__nav-link">О нас</a>
-        <a href="#" class="page-header__nav-link">Контакты</a>
+      <nav class="page-header__nav" id="js-nav">
+        <a href="index.html#upcoming" class="page-header__nav-link">Мероприятия</a>
+        <a href="index.html#blog" class="page-header__nav-link">Блог</a>
+        <a href="index.html#about" class="page-header__nav-link">О нас</a>
+        <a href="index.html#contacts" class="page-header__nav-link">Контакты</a>
 
         <div class="page-header__nav-user">
           <a href="#" class="page-header__nav-user-link">Александр С.</a>
@@ -110,7 +113,7 @@
 
       <section class="about home__about">
         <div class="about__container">
-          <h2 class="about__section-title section-title">О нас</h2>
+          <h2 class="about__section-title section-title" id="about">О нас</h2>
 
           <div class="about__first-block">
             <h3 class="about__title">Проект «Millennials»</h3>
@@ -230,7 +233,7 @@
       <section class="upcoming home__upcoming">
         <div class="upcoming__wrapper" id="js-upcoming-wrapper">
           <div class="upcoming__container">
-            <h2 class="upcoming__title section-title">Мероприятия</h2>
+            <h2 class="upcoming__title section-title" id="upcoming">Мероприятия</h2>
 
             <div class="upcoming__swiper swiper swiper--3s js-swiper">
               <div class="swiper-wrapper">
@@ -438,13 +441,13 @@
               </footer>
             </div>
 
-            <a href="#" class="upcoming__link link">Смотреть все</a>
+            <a href="../events.html" class="upcoming__link link">Смотреть все</a>
           </div>
         </div>
       </section>
 
       <section class="listing home__blog-listing">
-        <h2 class="listing__title section-title">Блог</h2>
+        <h2 class="listing__title section-title" id="blog">Блог</h2>
 
         <div class="listing__article-list">
           <!-- prettier-ignore -->
@@ -554,7 +557,7 @@
 
       <section class="info home__contacts">
         <div class="info__container">
-          <h2 class="info__title section-title">Контакты</h2>
+          <h2 class="info__title section-title" id="contacts">Контакты</h2>
 
           <div class="info__wrapper">
             <div class="info__items">
@@ -651,13 +654,13 @@
         </div>
 
         <div class="page-footer__center-block">
-          <a href="#" target="_blank" rel="nofollow norefferer noopener" class="page-footer__sn-link">
+          <a href="#" target="_blank" rel="nofollow norefferer noopener" class="page-footer__sn-link link">
             <svg class="page-footer__sn-icon" width="58" height="58">
               <use xlink:href="assets/icons/symbols.svg#instagram"></use>
             </svg>
           </a>
 
-          <a href="#" target="_blank" class="page-footer__sn-link">
+          <a href="#" target="_blank" rel="nofollow norefferer noopener" class="page-footer__sn-link link">
             <svg class="page-footer__sn-icon" width="58" height="58">
               <use xlink:href="assets/icons/symbols.svg#vkontakte"></use>
             </svg>
