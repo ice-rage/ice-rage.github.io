@@ -48,7 +48,7 @@
 
   if (eventForm.length) {
     eventForm.validate({
-      errorElement: "span",
+      errorElement: "span"
     });
   }
 
@@ -61,7 +61,7 @@
 
     subscriptionForm.validate({
       errorElement: "span",
-      submitHandler: function (form, event) {
+      submitHandler: function (_, event) {
         event.preventDefault();
 
         $.ajax({

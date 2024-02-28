@@ -38,6 +38,8 @@
       eventPP.addEventListener("click", closeEventPP);
     });
 
+    if (!$) return;
+
     /* Кастомизируем селект для выбора кол-ва посетителей мероприятия */
     const jsSelectric = $(".js-selectric");
 
@@ -60,12 +62,14 @@
     const dateField = $(".js-dateField");
 
     if (dateField.length) {
-      
-      const initDatePicker = function (datePicker) {
-        const dateInput = datePicker.find(".js-dateInput");
-        const dateDay = datePicker.find(".js-dateDay");
-        const dateMonth = datePicker.find(".js-dateMonth");
-        const dateYear = datePicker.find(".js-dateYear");
+
+      let isVisible = false;
+
+      const initDatepicker = function (currentDatepicker) {
+        const dateInput = currentDatepicker.find(".js-dateInput");
+        const dateDay = currentDatepicker.find(".js-dateDay");
+        const dateMonth = currentDatepicker.find(".js-dateMonth");
+        const dateYear = currentDatepicker.find(".js-dateYear");
 
         const dateConfig = {
           autoClose: true,
@@ -77,14 +81,31 @@
             dateDay.val(date ? ("0" + date.getDate()).slice(-2) : "");
             dateMonth.val(date ? ("0" + (date.getMonth() + 1)).slice(-2) : "");
             dateYear.val(date ? date.getFullYear() : "");
+            dateInput.valid();
+          },
+          onShow: function (isFinished) {
+            if (isFinished) {
+              isVisible = true;
+            }
+          },
+          onHide: function (isFinished) {
+            if (isFinished) {
+              isVisible = false;
+            }
           }
         };
 
-        new AirDatepicker(dateInput[0], dateConfig);
+        const airDatepicker = new AirDatepicker(dateInput[0], dateConfig);
+
+        dateInput.bind("click", function () {
+          if (isVisible) {
+            airDatepicker.hide();
+          }
+        });
       };
 
       $.each(dateField, function () {
-        initDatePicker($(this));
+        initDatepicker($(this));
       })
     }
   }
