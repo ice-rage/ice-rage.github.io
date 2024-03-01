@@ -3232,13 +3232,13 @@ button.swiper-pagination-bullet {
   transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
 .up-down-btn::before {
-  left: 20px;
+  left: 19px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 .up-down-btn::after {
-  right: 20px;
+  right: 19px;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
