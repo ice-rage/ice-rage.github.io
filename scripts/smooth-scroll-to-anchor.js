@@ -6,6 +6,9 @@
 
   if (!$) return;
 
+  // Получаем корневой элемент страницы (html или body в зависимости от браузера)
+  const $root = $("html, body");
+
   // Скрываем страницу, пока она полностью не загрузится
   $("html").css({ display: "none" });
 
@@ -41,11 +44,11 @@
       // Определяем позицию, к которой необходимо пролистать страницу
       var targetPosition = $(anchor).offset().top - topOffset;
 
-      // Прокручиваем корневой элемент (либо html, либо body в зависимости от браузера)
-      $("html, body").animate(
+      // Прокручиваем корневой элемент
+      $root.animate(
         {
           // Устанавливаем вертикальное положение вьюпорта к вычисленной позиции
-          scrollTop: targetPosition,
+          scrollTop: targetPosition
         },
         {
           duration: 2000, // Время прокрутки - 2 секунды
@@ -57,12 +60,12 @@
       history.pushState(null, null, "/" + anchor);
     }
 
-    $("#js-nav a[href]").bind("click", function () {
+    $("#js-nav a[href]").on("click", function () {
 
       // Получаем ссылку из соответствующего атрибута
       const href = $(this).attr("href");
-      
-      // Из ссылки извлекаем непосредственно якорь, к которому требуется 
+
+      // Из ссылки извлекаем непосредственно якорь, к которому требуется
       // прокрутить страницу
       const anchor = href.substring(href.indexOf("#"), href.length);
 

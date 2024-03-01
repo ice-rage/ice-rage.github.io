@@ -97,7 +97,7 @@
 
         const airDatepicker = new AirDatepicker(dateInput[0], dateConfig);
 
-        dateInput.bind("click", function () {
+        dateInput.on("click", function () {
           if (isVisible) {
             airDatepicker.hide();
           }

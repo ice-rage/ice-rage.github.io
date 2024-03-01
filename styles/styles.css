@@ -3200,6 +3200,62 @@ button.swiper-pagination-bullet {
   text-align: center;
   word-wrap: break-word;
 }
+.up-down-btn {
+  position: fixed;
+  right: 15px;
+  bottom: 45px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background-color: rgba(108, 108, 108, 0.5);
+  border-radius: 50%;
+  border: 0;
+  outline: none;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  z-index: 10;
+}
+.up-down-btn::before,
+.up-down-btn::after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  width: 23px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+.up-down-btn::before {
+  left: 20px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.up-down-btn::after {
+  right: 20px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.up-down-btn:active {
+  background-color: #A51505;
+}
+.up-down-btn--down::before {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.up-down-btn--down::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 .event-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7016,6 +7072,9 @@ button.swiper-pagination-bullet {
   }
   .subscription-form__submit:hover {
     background-color: #A51505;
+  }
+  .up-down-btn:hover {
+    background-color: rgba(165, 21, 5, 0.8);
   }
   .event-card__link:hover .event-card__title {
     color: #BC3324;
