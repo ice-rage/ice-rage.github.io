@@ -3317,7 +3317,6 @@ button.swiper-pagination-bullet {
   font-size: 14px;
 }
 .article-card {
-  position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -3351,10 +3350,12 @@ button.swiper-pagination-bullet {
   width: 467px;
   margin-right: 60px;
   font-size: 0;
+  text-decoration: none;
 }
 .article-card__picture {
   position: relative;
   width: 100%;
+  display: block;
   -webkit-transition: -webkit-box-shadow 0.2s;
   transition: -webkit-box-shadow 0.2s;
   transition: box-shadow 0.2s;
