@@ -1,5 +1,3 @@
-import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
-
 (function () {
   "use strict";
 
@@ -78,15 +76,38 @@ import mapDarkTheme from "../json/map-dark-theme.json" assert { type: "json" }
       }
     );
 
+    // Работаем с картой только в том случае, если ее удалось инициализировать
     if (infoMap) {
-      
-      // Добавляем слой для отображения карты (в сером ночном стиле)
-      infoMap.addChild(
-        new YMapDefaultSchemeLayer({
-          theme: "dark",
-          customization: mapDarkTheme
+
+      // Пытаемся прочитать данные из JSON-файла, в котором прописаны настройки
+      // пользовательской темной темы
+      fetch("json/map-dark-theme.json")
+        .then(response => {
+
+          if (!response.ok) {
+            throw new Error("Ошибка в fetch: " + response.statusText);
+          }
+          
+          return response.json();
         })
-      );
+
+         // При успешном чтении данных из JSON-файла добавляем на карту слой 
+         // с пользовательской темной темой
+        .then(darkTheme => {
+          infoMap.addChild(
+            new YMapDefaultSchemeLayer({
+              theme: "dark",
+              customization: darkTheme
+            })
+          );
+        })
+
+        // В противном случае добавляем на карту слой с темной темой по умолчанию 
+        // и оповещаем об ошибке через консоль
+        .catch(error => {
+          infoMap.addChild(new YMapDefaultSchemeLayer({ theme: "dark" }));
+          console.error("Ошибка при выполнении запроса: ", error);
+        });
 
       // Добавляем слой для отображения метки поверх карты
       infoMap.addChild(new YMapDefaultFeaturesLayer({}));
