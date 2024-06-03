@@ -49,7 +49,6 @@
 
   <script defer src="scripts/nav-toggle.min.js"></script>
   <script src="scripts/up-down-scroll.min.js"></script>
-  <script src="scripts/scroll-to-anchor.min.js"></script>
 </head>
 
 <body class="body">
@@ -61,10 +60,10 @@
         </svg>
       </a>
       <nav class="page-header__nav" id="js-nav">
-        <a href="index.html#upcoming" class="page-header__nav-link">Мероприятия</a>
-        <a href="index.html#blog" class="page-header__nav-link">Блог</a>
-        <a href="index.html#about" class="page-header__nav-link">О нас</a>
-        <a href="index.html#contacts" class="page-header__nav-link">Контакты</a>
+        <a href="../events.html" class="page-header__nav-link">Мероприятия</a>
+        <a href="#" class="page-header__nav-link">Блог</a>
+        <a href="#" class="page-header__nav-link">О нас</a>
+        <a href="#" class="page-header__nav-link">Контакты</a>
 
         <div class="page-header__nav-user">
           <a href="#" class="page-header__nav-user-link">Александр С.</a>
@@ -212,7 +211,9 @@
           <div class="page-footer__creator">
             <span class="page-footer__creator-label">Создание и продвижение</span>
             <a href="https://tagree.ru/" target="_blank" rel="nofollow norefferer noopener" class="page-footer__creator-link">
-              <img src="assets/images/tagree.png" alt="tagree" class="page-footer__creator-img">
+              <svg class="page-footer__creator-icon" width="56" height="17">
+                <use xlink:href="assets/icons/symbols.svg#tagree"></use>
+              </svg>
             </a>
           </div>
         </div>
